@@ -29,10 +29,10 @@ export default function GalleryContent() {
       <section style={{background:'#090202', padding:'32px 16px 48px', minHeight:'100vh'}} className="sm:py-12 sm:px-6">
         <div style={{
           display:'grid',
-          gridTemplateColumns:'repeat(4,1fr)',
-          gap:'10px',
-          maxWidth:'1000px', margin:'0 auto',
-        }} className="sm:gap-3">
+          gridTemplateColumns:'repeat(3,1fr)',
+          gap:'16px',
+          maxWidth:'1100px', margin:'0 auto',
+        }} className="sm:gap-5">
           {galleryItems.map((item, i) => (
             <div
               key={i}
@@ -40,7 +40,7 @@ export default function GalleryContent() {
               style={{
                 position:'relative', borderRadius:'8px', overflow:'hidden',
                 border:'1px solid rgba(201,168,76,0.1)',
-                cursor:'pointer', aspectRatio:'1/1',
+                cursor:'pointer', aspectRatio:'3/4',
                 background: item.type === 'placeholder' ? item.gradient : '#0f0303',
                 opacity: 0,
                 transform: 'translateY(30px)',
