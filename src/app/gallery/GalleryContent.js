@@ -4,7 +4,6 @@ import { PageHero } from '@/components/SharedPage'
 import Footer from '@/components/Footer'
 
 const galleryItems = [
-  { type: 'image', src: '/images/makeupservice.png', label: 'Party Makeup' },
   { type: 'image', src: '/images/portfolio.png', label: 'Portfolio Showcase' },
   { type: 'image', src: '/images/portfolio1.png', label: 'Bridal Look' },
   { type: 'image', src: '/images/portfolio2.png', label: 'Party Look' },
@@ -30,10 +29,10 @@ export default function GalleryContent() {
       <section style={{background:'#090202', padding:'32px 16px 48px', minHeight:'100vh'}} className="sm:py-12 sm:px-6">
         <div style={{
           display:'grid',
-          gridTemplateColumns:'repeat(2,1fr)',
-          gap:'12px',
-          maxWidth:'1200px', margin:'0 auto',
-        }} className="sm:grid-cols-3 md:grid-cols-4 sm:gap-4">
+          gridTemplateColumns:'repeat(4,1fr)',
+          gap:'8px',
+          maxWidth:'1100px', margin:'0 auto',
+        }} className="sm:grid-cols-5 md:grid-cols-6 sm:gap-2">
           {galleryItems.map((item, i) => (
             <div
               key={i}
@@ -41,7 +40,7 @@ export default function GalleryContent() {
               style={{
                 position:'relative', borderRadius:'8px', overflow:'hidden',
                 border:'1px solid rgba(201,168,76,0.1)',
-                cursor:'pointer', aspectRatio:'3/4',
+                cursor:'pointer', aspectRatio:'3/2',
                 background: item.type === 'placeholder' ? item.gradient : '#0f0303',
                 opacity: 0,
                 transform: 'translateY(30px)',
