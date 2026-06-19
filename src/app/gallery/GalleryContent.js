@@ -8,7 +8,7 @@ const galleryItems = [
   { type: 'image', src: '/images/makeupservice.png', label: 'Party Makeup' },
   { type: 'placeholder', gradient: 'linear-gradient(160deg, #1a0a20, #0d0510)', icon: '💍', label: 'Engagement' },
   { type: 'placeholder', gradient: 'linear-gradient(160deg, #3a0d0d, #1a0505)', icon: '👰', label: 'Bridal' },
-  { type: 'image', src: '/images/parlourservice.png', label: 'Facials' },
+  { type: 'image', src: '/images/parlour.jpeg', label: 'Facials' },
   { type: 'placeholder', gradient: 'linear-gradient(160deg, #2a0a20, #150510)', icon: '🎨', label: 'Hair Colour' },
   { type: 'placeholder', gradient: 'linear-gradient(160deg, #0a1a15, #050d0a)', icon: '💆', label: 'Hair Spa' },
   { type: 'placeholder', gradient: 'linear-gradient(160deg, #2a1510, #150a08)', icon: '✂️', label: 'Hair Cuts' },
@@ -18,7 +18,7 @@ const galleryItems = [
   { type: 'placeholder', gradient: 'linear-gradient(160deg, #10101a, #08080d)', icon: '🌸', label: 'Body Spa' },
   { type: 'placeholder', gradient: 'linear-gradient(160deg, #1a0515, #0d020a)', icon: '🦶', label: 'Pedicure' },
   { type: 'placeholder', gradient: 'linear-gradient(160deg, #1a1515, #0d0a0a)', icon: '⭐', label: 'Bleach' },
-  { type: 'image', src: '/images/homeparlour.png', label: 'Home Parlour' },
+  { type: 'image', src: '/images/homeparloue.jpeg', label: 'Home Parlour' },
 ]
 
 export default function GalleryContent() {
