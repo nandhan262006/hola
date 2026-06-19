@@ -30,9 +30,9 @@ export default function GalleryContent() {
         <div style={{
           display:'grid',
           gridTemplateColumns:'repeat(4,1fr)',
-          gap:'8px',
-          maxWidth:'1100px', margin:'0 auto',
-        }} className="sm:grid-cols-5 md:grid-cols-6 sm:gap-2">
+          gap:'10px',
+          maxWidth:'1000px', margin:'0 auto',
+        }} className="sm:gap-3">
           {galleryItems.map((item, i) => (
             <div
               key={i}
@@ -40,7 +40,7 @@ export default function GalleryContent() {
               style={{
                 position:'relative', borderRadius:'8px', overflow:'hidden',
                 border:'1px solid rgba(201,168,76,0.1)',
-                cursor:'pointer', aspectRatio:'3/2',
+                cursor:'pointer', aspectRatio:'1/1',
                 background: item.type === 'placeholder' ? item.gradient : '#0f0303',
                 opacity: 0,
                 transform: 'translateY(30px)',
