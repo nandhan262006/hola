@@ -221,7 +221,7 @@ export default function HomeContent() {
                 </svg>
                 Book Appointment
               </Link>
-              <Link href="/#services" className="btn-outline">
+              <Link href="/#services" className="btn-crimson">
                 {/* Lotus/play icon */}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="12" cy="12" r="10"/>
@@ -592,6 +592,63 @@ export default function HomeContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/>
               </svg>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════
+          HAIRDRESSING CAROUSEL
+      ════════════════════════════════════ */}
+      <section style={{
+        background:'#080100', padding:'60px 24px', overflow:'hidden',
+      }}>
+        <div style={{maxWidth:'1100px',margin:'0 auto'}}>
+          <p style={{
+            fontFamily:'Cormorant Garamond,serif', fontSize:'11px',
+            letterSpacing:'0.45em', color:'#8b1a1a', textTransform:'uppercase',
+            textAlign:'center', marginBottom:'8px',
+          }}>Our Expertise</p>
+          <h2 style={{
+            fontFamily:'Playfair Display,serif', fontSize:'clamp(28px,5vw,40px)',
+            fontWeight:900, textAlign:'center', marginBottom:'40px',
+            color:'#c9a84c', textShadow:'0 0 20px rgba(201,168,76,0.3)',
+          }}>Best Hairdressing in Nellore</h2>
+          <div style={{
+            display:'flex', gap:'16px', overflow:'hidden',
+            maskImage:'linear-gradient(to right,transparent,black 5%,black 95%,transparent)',
+            WebkitMaskImage:'linear-gradient(to right,transparent,black 5%,black 95%,transparent)',
+          }}>
+            <div className="carousel-track" style={{
+              display:'flex', gap:'16px', animation:'scrollLeft 30s linear infinite',
+            }}>
+              {[
+                '/images/portfolio.png','/images/portfolio1.png',
+                '/images/portfolio2.png','/images/portfolio3.png',
+                '/images/portfolio4.png','/images/portfolio5.png',
+                '/images/portfolio6.png','/images/hero.png',
+                '/images/portfolio.png','/images/portfolio1.png',
+                '/images/portfolio2.png','/images/portfolio3.png',
+                '/images/portfolio4.png','/images/portfolio5.png',
+                '/images/portfolio6.png','/images/hero.png',
+              ].map((src,i)=>(
+                <div key={i} style={{
+                  flex:'0 0 220px', height:'280px', borderRadius:'8px',
+                  overflow:'hidden', border:'1px solid rgba(201,168,76,0.15)',
+                  position:'relative',
+                }}>
+                  <img
+                    src={src}
+                    alt={`Hair styling look ${i+1} – Hola Beauty Parlour`}
+                    style={{width:'100%',height:'100%',objectFit:'cover'}}
+                  />
+                  <div style={{
+                    position:'absolute', bottom:0, left:0, right:0,
+                    background:'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
+                    padding:'40px 12px 10px',
+                  }}/>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
