@@ -19,6 +19,12 @@ const galleryItems = [
   { type: 'placeholder', gradient: 'linear-gradient(160deg, #1a0515, #0d020a)', icon: '🦶', label: 'Pedicure' },
   { type: 'placeholder', gradient: 'linear-gradient(160deg, #1a1515, #0d0a0a)', icon: '⭐', label: 'Bleach' },
   { type: 'image', src: '/images/homeparloue.jpeg', label: 'Home Parlour' },
+  { type: 'image', src: '/images/hairdressing.jpeg', label: 'Hairdressing' },
+  { type: 'image', src: '/images/hairdressing1.jpeg', label: 'Hair Styling' },
+  { type: 'image', src: '/images/hairdressing2.jpeg', label: 'Hair Color' },
+  { type: 'image', src: '/images/hairdressing3.jpeg', label: 'Hair Spa' },
+  { type: 'image', src: '/images/hairdressing4.jpeg', label: 'Hair Cut' },
+  { type: 'image', src: '/images/hairdressing5.jpeg', label: 'Hair Makeover' },
 ]
 
 export default function GalleryContent() {
