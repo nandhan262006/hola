@@ -603,55 +603,6 @@ export default function HomeContent() {
       </section>
 
       {/* ════════════════════════════════════
-          MAP SECTION
-      ════════════════════════════════════ */}
-      <section style={{
-        background:'#080100', padding:'60px 24px 80px',
-      }}>
-        <div style={{maxWidth:'980px',margin:'0 auto'}}>
-          <div style={{textAlign:'center',marginBottom:'40px'}}>
-            <p style={{
-              fontFamily:'Cormorant Garamond,serif',
-              fontSize:'11px', letterSpacing:'0.45em',
-              color:'#8b1a1a', textTransform:'uppercase', marginBottom:'8px',
-            }}>Visit Us</p>
-            <h2 style={{
-              fontFamily:'Playfair Display,serif',
-              fontSize:'clamp(32px,6vw,52px)',
-              fontWeight:900, color:'#fff',
-              letterSpacing:'0.12em', textTransform:'uppercase',
-            }}>FIND US</h2>
-          </div>
-          <a
-            href="https://maps.app.goo.gl/sMyYbdMEwYXtrVmt5"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{display:'block', position:'relative', borderRadius:'8px', overflow:'hidden', textDecoration:'none'}}
-          >
-            <iframe
-              src="https://www.google.com/maps?q=Hola+Beauty+Parlour+Nellore&output=embed&z=15"
-              width="100%"
-              height="380"
-              style={{border:0, borderRadius:'8px', filter:'invert(90%) hue-rotate(180deg)'}}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Hola Beauty Parlour – Google Maps Location"
-            />
-            <div style={{
-              position:'absolute', bottom:'12px', left:'50%', transform:'translateX(-50%)',
-              background:'rgba(0,0,0,0.75)', color:'#c9a84c',
-              fontSize:'12px', letterSpacing:'0.05em', padding:'6px 16px',
-              borderRadius:'4px', whiteSpace:'nowrap',
-              fontFamily:'Cormorant Garamond, serif',
-            }}>
-              Tap to open in Google Maps ↗
-            </div>
-          </a>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════
           HAIRDRESSING CAROUSEL
       ════════════════════════════════════ */}
       <section style={{
@@ -703,6 +654,55 @@ export default function HomeContent() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════
+          MAP SECTION
+      ════════════════════════════════════ */}
+      <section style={{
+        background:'#080100', padding:'60px 24px 80px',
+      }}>
+        <div style={{maxWidth:'980px',margin:'0 auto'}}>
+          <div style={{textAlign:'center',marginBottom:'40px'}}>
+            <p style={{
+              fontFamily:'Cormorant Garamond,serif',
+              fontSize:'11px', letterSpacing:'0.45em',
+              color:'#8b1a1a', textTransform:'uppercase', marginBottom:'8px',
+            }}>Visit Us</p>
+            <h2 style={{
+              fontFamily:'Playfair Display,serif',
+              fontSize:'clamp(32px,6vw,52px)',
+              fontWeight:900, color:'#fff',
+              letterSpacing:'0.12em', textTransform:'uppercase',
+            }}>FIND US</h2>
+          </div>
+          <a
+            href="https://maps.app.goo.gl/sMyYbdMEwYXtrVmt5"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{display:'block', position:'relative', borderRadius:'8px', overflow:'hidden', textDecoration:'none'}}
+          >
+            <iframe
+              src="https://www.google.com/maps?q=Hola+Beauty+Parlour+Nellore&output=embed&z=15"
+              width="100%"
+              height="380"
+              style={{border:0, borderRadius:'8px', filter:'invert(90%) hue-rotate(180deg)'}}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Hola Beauty Parlour – Google Maps Location"
+            />
+            <div style={{
+              position:'absolute', bottom:'12px', left:'50%', transform:'translateX(-50%)',
+              background:'rgba(0,0,0,0.75)', color:'#c9a84c',
+              fontSize:'12px', letterSpacing:'0.05em', padding:'6px 16px',
+              borderRadius:'4px', whiteSpace:'nowrap',
+              fontFamily:'Cormorant Garamond, serif',
+            }}>
+              Tap to open in Google Maps ↗
+            </div>
+          </a>
         </div>
       </section>
 
