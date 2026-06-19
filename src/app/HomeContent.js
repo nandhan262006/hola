@@ -4,16 +4,15 @@ import Image from 'next/image'
 import Footer from '@/components/Footer'
 import { useState, useEffect, useRef } from 'react'
 
-let videoPlayed = false
-
 export default function HomeContent() {
-  const [slideUp, setSlideUp] = useState(videoPlayed)
-  const [hidden, setHidden] = useState(videoPlayed)
+  const alreadyPlayed = typeof window !== 'undefined' && window.__holaVideoPlayed
+  const [slideUp, setSlideUp] = useState(alreadyPlayed)
+  const [hidden, setHidden] = useState(alreadyPlayed)
   const videoRef = useRef(null)
   const hasEnded = useRef(false)
 
   useEffect(() => {
-    if (videoPlayed) return
+    if (alreadyPlayed) return
 
     const vid = videoRef.current
     if (!vid) return
@@ -23,7 +22,7 @@ export default function HomeContent() {
     const done = () => {
       if (hasEnded.current) return
       hasEnded.current = true
-      videoPlayed = true
+      window.__holaVideoPlayed = true
       setSlideUp(true)
       setTimeout(() => setHidden(true), 800)
     }
@@ -37,11 +36,11 @@ export default function HomeContent() {
       clearTimeout(fallback)
       vid.pause()
     }
-  }, [])
+  }, [alreadyPlayed])
 
   return (
     <>
-      <div style={{
+      <div suppressHydrationWarning style={{
         position:'fixed', top:0, left:0, right:0, bottom:0, zIndex:9999, overflow:'hidden',
         background:'#000',
         pointerEvents: hidden ? 'none' : 'auto',
