@@ -43,7 +43,7 @@ body {
 /* ── CAROUSEL SCROLL ── */
 @keyframes scrollLeft {
   0% { transform:translateX(0); }
-  100% { transform:translateX(calc(-220px * 8 - 16px * 7)); }
+  100% { transform:translateX(calc(-220px * 6 - 16px * 5)); }
 }
 
 /* ── SPARKLE PARTICLES ── */

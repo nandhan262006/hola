@@ -622,14 +622,12 @@ export default function HomeContent() {
               display:'flex', gap:'16px', animation:'scrollLeft 30s linear infinite',
             }}>
               {[
-                '/images/portfolio.png','/images/portfolio1.png',
-                '/images/portfolio2.png','/images/portfolio3.png',
-                '/images/portfolio4.png','/images/portfolio5.png',
-                '/images/portfolio6.png','/images/hero.png',
-                '/images/portfolio.png','/images/portfolio1.png',
-                '/images/portfolio2.png','/images/portfolio3.png',
-                '/images/portfolio4.png','/images/portfolio5.png',
-                '/images/portfolio6.png','/images/hero.png',
+                '/images/hairdressing.jpeg','/images/hairdressing1.jpeg',
+                '/images/hairdressing2.jpeg','/images/hairdressing3.jpeg',
+                '/images/hairdressing4.jpeg','/images/hairdressing5.jpeg',
+                '/images/hairdressing.jpeg','/images/hairdressing1.jpeg',
+                '/images/hairdressing2.jpeg','/images/hairdressing3.jpeg',
+                '/images/hairdressing4.jpeg','/images/hairdressing5.jpeg',
               ].map((src,i)=>(
                 <div key={i} style={{
                   flex:'0 0 220px', height:'280px', borderRadius:'8px',
