@@ -11,6 +11,11 @@ export default function HomeContent() {
   const hasEnded = useRef(false)
 
   useEffect(() => {
+    if (sessionStorage.getItem('hola_video_played')) {
+      setHidden(true)
+      return
+    }
+
     const vid = videoRef.current
     if (!vid) return
 
@@ -19,6 +24,7 @@ export default function HomeContent() {
     const done = () => {
       if (hasEnded.current) return
       hasEnded.current = true
+      sessionStorage.setItem('hola_video_played', '1')
       setSlideUp(true)
       setTimeout(() => setHidden(true), 800)
     }
@@ -56,6 +62,7 @@ export default function HomeContent() {
             className="intro-video"
             style={{width:'100%', height:'100%', objectFit:'cover'}}
             onClick={() => {
+              sessionStorage.setItem('hola_video_played', '1')
               setSlideUp(true)
               setTimeout(() => setHidden(true), 800)
             }}

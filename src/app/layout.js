@@ -37,15 +37,19 @@ export const metadata = {
   },
   verification: {
     google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+    // Replace with your Google Search Console verification code
   },
   alternates: {
     canonical: 'https://holabeauty.in',
+    languages: {
+      'en-IN': 'https://holabeauty.in',
+    },
   },
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+      <html lang="en-IN">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

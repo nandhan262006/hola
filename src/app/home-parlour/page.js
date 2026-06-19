@@ -8,22 +8,25 @@ export const metadata = {
   title: 'Home Parlour Services – Beauty at Your Doorstep Nellore',
   description: 'Ladies home parlour services in Nellore. Bridal home package, pre-bridal, party makeup, facial, waxing, hair care, manicure & pedicure at your doorstep. Call +91 94909 39727.',
   keywords: ['home parlour services Nellore', 'beauty services at home Nellore', 'home salon Nellore', 'bridal makeup at home Nellore', 'party makeup at home', 'home facial Nellore', 'home waxing Nellore', 'salon at doorstep Nellore', 'ladies parlour at home'],
+  alternates: {
+    canonical: 'https://holabeauty.in/home-parlour',
+  },
   openGraph: {
     title: 'Home Parlour Services – Hola Beauty Nellore',
     description: 'Luxury beauty services at your doorstep. Bridal, facial, waxing, hair & more. Call us!',
-    images: [{ url: '/images/homeparlour.png', width: 1200, height: 630, alt: 'Hola Beauty Home Parlour Services' }],
+    images: [{ url: '/images/homeparloue.jpeg', width: 1200, height: 630, alt: 'Hola Beauty Home Parlour Services' }],
   },
 }
 
 const homeServices = [
-  { name: 'Bridal Home Package', desc: 'Full bridal makeup, hair, saree draping & pre-bridal services at your home.', price: '₹8,000 – ₹25,000', originalPrice: '₹9,600 – ₹30,000', popular: true, bg: 'linear-gradient(160deg, #2a0510, #150208)' },
-  { name: 'Pre-Bridal Package', desc: 'Facials, body polishing, waxing & threading package done at home before the big day.', price: '₹3,000 – ₹8,000', originalPrice: '₹3,600 – ₹9,600', popular: true, bg: 'linear-gradient(160deg, #1a101a, #0d080d)' },
-  { name: 'Party/Function Makeup', desc: 'Glamorous makeup for family functions, pujas, and celebrations at your doorstep.', price: '₹2,000 – ₹5,000', originalPrice: '₹2,400 – ₹6,000', bg: 'linear-gradient(160deg, #2a1210, #150808)' },
-  { name: 'Home Facial', desc: 'Relaxing, rejuvenating facial treatment done in the comfort of your home.', price: '₹800 – ₹2,500', originalPrice: '₹960 – ₹3,000', bg: 'linear-gradient(160deg, #0a1a10, #050d08)' },
-  { name: 'Home Waxing', desc: 'Professional full-body or partial waxing at your home with hygienic standards.', price: '₹500 – ₹2,000', originalPrice: '₹600 – ₹2,400', bg: 'linear-gradient(160deg, #1a1510, #0d0a08)' },
-  { name: 'Home Hair Care', desc: 'Hair wash, spa, conditioning, and styling done at your convenience.', price: '₹600 – ₹3,000', originalPrice: '₹720 – ₹3,600', bg: 'linear-gradient(160deg, #0a151a, #050a0d)' },
-  { name: 'Home Manicure & Pedicure', desc: 'Relaxing nail care and foot massage in the comfort of your own space.', price: '₹600 – ₹1,500', originalPrice: '₹720 – ₹1,800', bg: 'linear-gradient(160deg, #1a0515, #0d020a)' },
-  { name: 'Senior Citizen Package', desc: 'Gentle beauty services designed for elderly ladies at home.', price: '₹500 – ₹1,500', originalPrice: '₹600 – ₹1,800', bg: 'linear-gradient(160deg, #15101a, #0a080d)' },
+  { name: 'Bridal Home Package', desc: 'Full bridal makeup, hair, saree draping & pre-bridal services at your home.', price: '₹8,000 – ₹25,000', popular: true, bg: 'linear-gradient(160deg, #2a0510, #150208)' },
+  { name: 'Pre-Bridal Package', desc: 'Facials, body polishing, waxing & threading package done at home before the big day.', price: '₹3,000 – ₹8,000', popular: true, bg: 'linear-gradient(160deg, #1a101a, #0d080d)' },
+  { name: 'Party/Function Makeup', desc: 'Glamorous makeup for family functions, pujas, and celebrations at your doorstep.', price: '₹2,000 – ₹5,000', bg: 'linear-gradient(160deg, #2a1210, #150808)' },
+  { name: 'Home Facial', desc: 'Relaxing, rejuvenating facial treatment done in the comfort of your home.', price: '₹800 – ₹2,500', bg: 'linear-gradient(160deg, #0a1a10, #050d08)' },
+  { name: 'Home Waxing', desc: 'Professional full-body or partial waxing at your home with hygienic standards.', price: '₹500 – ₹2,000', bg: 'linear-gradient(160deg, #1a1510, #0d0a08)' },
+  { name: 'Home Hair Care', desc: 'Hair wash, spa, conditioning, and styling done at your convenience.', price: '₹600 – ₹3,000', bg: 'linear-gradient(160deg, #0a151a, #050a0d)' },
+  { name: 'Home Manicure & Pedicure', desc: 'Relaxing nail care and foot massage in the comfort of your own space.', price: '₹600 – ₹1,500', bg: 'linear-gradient(160deg, #1a0515, #0d020a)' },
+  { name: 'Senior Citizen Package', desc: 'Gentle beauty services designed for elderly ladies at home.', price: '₹500 – ₹1,500', bg: 'linear-gradient(160deg, #15101a, #0a080d)' },
 ]
 
 const howItWorks = [

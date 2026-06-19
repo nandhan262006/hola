@@ -6,6 +6,9 @@ export const metadata = {
   title: 'Contact Us – Hola Beauty Parlour Nellore',
   description: 'Visit Hola Beauty Parlour in Nellore near Mahila Pranganam Gate, Santhinagar. Call +91 94909 39727 or follow @hola_makeovers on Instagram. Ladies beauty parlour open daily 9AM-10PM.',
   keywords: ['contact Hola Beauty', 'Hola Beauty Parlour address', 'beauty parlour Nellore contact', 'Nellore beauty salon phone', 'hola_makeovers Instagram', 'beauty parlour near Mahila Pranganam'],
+  alternates: {
+    canonical: 'https://holabeauty.in/contact',
+  },
   openGraph: {
     title: 'Contact Us – Hola Beauty Parlour Nellore',
     description: 'Visit us or call +91 94909 39727. Ladies beauty parlour near Mahila Pranganam Gate, Nellore.',

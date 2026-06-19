@@ -1,5 +1,12 @@
 import Link from 'next/link'
 
+export function boostPrice(priceStr) {
+  return priceStr.replace(/\d[\d,]*/g, (match) => {
+    const num = parseInt(match.replace(/,/g, ''), 10)
+    return Math.round(num * 1.2).toLocaleString('en-IN')
+  })
+}
+
 export function PageHero({ title, tagline, icon, breadcrumb }) {
   return (
     <section className="relative pt-28 pb-16 px-6 overflow-hidden">
@@ -44,7 +51,7 @@ export function SectionTitle({ sub, title }) {
   )
 }
 
-export function ServiceItem({ name, desc, price, popular, bg, originalPrice }) {
+export function ServiceItem({ name, desc, price, popular, bg }) {
   return (
     <div className="service-card rounded-lg overflow-hidden relative flex flex-col border" style={{borderColor:'#c9a84c30'}}>
       {popular && (
@@ -67,12 +74,8 @@ export function ServiceItem({ name, desc, price, popular, bg, originalPrice }) {
         <h3 className="font-bold mb-1" style={{fontFamily:'Playfair Display, serif', color:'#c9a84c', fontSize:'clamp(13px,2vw,16px)'}}>{name}</h3>
         <p className="text-white/40 leading-relaxed mb-2 flex-1" style={{fontFamily:'Cormorant Garamond, serif', fontSize:'clamp(12px,2vw,13px)'}}>{desc}</p>
         <div className="text-xs font-semibold pt-2 border-t" style={{color:'#f0d070', borderColor:'#c9a84c15'}}>
-          {originalPrice ? (
-            <>
-              <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.3)', fontWeight:400, marginRight:'6px'}}>{originalPrice}</span>
-              {price}
-            </>
-          ) : price}
+          <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.3)', fontWeight:400, marginRight:'6px'}}>{boostPrice(price)}</span>
+          {price}
         </div>
       </div>
     </div>

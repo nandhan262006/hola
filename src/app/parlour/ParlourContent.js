@@ -4,120 +4,120 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import Footer from '@/components/Footer'
-import { SectionTitle, BookingCTA } from '@/components/SharedPage'
+import { SectionTitle, BookingCTA, boostPrice } from '@/components/SharedPage'
 
 const categories = [
   {
     id:'threading', title:'Threading',
     gradient:'linear-gradient(160deg, #15101a, #0a080d)',
     services:[
-      {name:'Eye Brows',price:'₹50',originalPrice:'₹60'},{name:'Fore Head',price:'₹30',originalPrice:'₹36'},
-      {name:'Upper Lip',price:'₹30',originalPrice:'₹36'},{name:'Chin',price:'₹30',originalPrice:'₹36'},
-      {name:'Full Face',price:'₹200',originalPrice:'₹240'},
+      {name:'Eye Brows',price:'₹50'},{name:'Fore Head',price:'₹30'},
+      {name:'Upper Lip',price:'₹30'},{name:'Chin',price:'₹30'},
+      {name:'Full Face',price:'₹200'},
     ],
   },
   {
     id:'dtan', title:'D-Tan',
     gradient:'linear-gradient(160deg, #1a1510, #0d0a08)',
     services:[
-      {name:'Face',price:'₹300',originalPrice:'₹360'},{name:'Face & Neck',price:'₹500',originalPrice:'₹600'},
-      {name:'Blouse Line',price:'₹300',originalPrice:'₹360'},{name:'Full Arms',price:'₹500',originalPrice:'₹600'},
-      {name:'Half Legs',price:'₹500',originalPrice:'₹600'},{name:'Full Body',price:'₹3,000',originalPrice:'₹3,600'},
+      {name:'Face',price:'₹300'},{name:'Face & Neck',price:'₹500'},
+      {name:'Blouse Line',price:'₹300'},{name:'Full Arms',price:'₹500'},
+      {name:'Half Legs',price:'₹500'},{name:'Full Body',price:'₹3,000'},
     ],
   },
   {
     id:'bleach', title:'Bleach',
     gradient:'linear-gradient(160deg, #1a1515, #0d0a0a)',
     services:[
-      {name:'Face',price:'₹300',originalPrice:'₹360'},{name:'Face & Neck',price:'₹500',originalPrice:'₹600'},
-      {name:'Blouse Line',price:'₹500',originalPrice:'₹600'},{name:'Full Arms',price:'₹500',originalPrice:'₹600'},
-      {name:'Half Legs',price:'₹500',originalPrice:'₹600'},{name:'Full Body',price:'₹500',originalPrice:'₹600'},
+      {name:'Face',price:'₹300'},{name:'Face & Neck',price:'₹500'},
+      {name:'Blouse Line',price:'₹500'},{name:'Full Arms',price:'₹500'},
+      {name:'Half Legs',price:'₹500'},{name:'Full Body',price:'₹500'},
     ],
   },
   {
     id:'waxing', title:'Flavored Waxing',
     gradient:'linear-gradient(160deg, #1a1510, #0d0a08)',
     services:[
-      {name:'Upper Lip',price:'₹30',originalPrice:'₹36'},{name:'Chin',price:'₹30',originalPrice:'₹36'},
-      {name:'Full Face',price:'₹200',originalPrice:'₹240'},{name:'Under Arms',price:'₹150',originalPrice:'₹180'},
-      {name:'Half Arms',price:'₹400',originalPrice:'₹480'},{name:'Full Arms',price:'₹800',originalPrice:'₹960'},
-      {name:'Half Legs',price:'₹500',originalPrice:'₹600'},{name:'Full Legs',price:'₹1,000',originalPrice:'₹1,200'},
-      {name:'Full Body',price:'₹3,000',originalPrice:'₹3,600'},
+      {name:'Upper Lip',price:'₹30'},{name:'Chin',price:'₹30'},
+      {name:'Full Face',price:'₹200'},{name:'Under Arms',price:'₹150'},
+      {name:'Half Arms',price:'₹400'},{name:'Full Arms',price:'₹800'},
+      {name:'Half Legs',price:'₹500'},{name:'Full Legs',price:'₹1,000'},
+      {name:'Full Body',price:'₹3,000'},
     ],
   },
   {
     id:'hairspa', title:'Hair Spa',
     gradient:'linear-gradient(160deg, #0a1a15, #050d0a)',
     services:[
-      {name:'Short',price:'₹1,200',originalPrice:'₹1,440'},{name:'Medium',price:'₹1,700',originalPrice:'₹2,040'},
-      {name:'Long',price:'₹2,200',originalPrice:'₹2,640'},
+      {name:'Short',price:'₹1,200'},{name:'Medium',price:'₹1,700'},
+      {name:'Long',price:'₹2,200'},
     ],
   },
   {
     id:'haircolouring', title:'Hair Coloring',
     gradient:'linear-gradient(160deg, #2a0a20, #150510)',
     services:[
-      {name:'Root Touchup',price:'₹999',originalPrice:'₹1,199'},{name:'Global',price:'₹1,999',originalPrice:'₹2,399'},
-      {name:'Highlights Per Streak',price:'₹299',originalPrice:'₹359'},{name:'Highlights Global',price:'₹2,999',originalPrice:'₹3,599'},
+      {name:'Root Touchup',price:'₹999'},{name:'Global',price:'₹1,999'},
+      {name:'Highlights Per Streak',price:'₹299'},{name:'Highlights Global',price:'₹2,999'},
     ],
   },
   {
     id:'hairstyling', title:'Hair Styling',
     gradient:'linear-gradient(160deg, #2a1510, #150a08)',
     services:[
-      {name:'Hair Wash',price:'₹200',originalPrice:'₹240'},{name:'Hair Wash + Conditioner',price:'₹300',originalPrice:'₹360'},
-      {name:'Blowdry',price:'₹499',originalPrice:'₹599'},{name:'Ironing',price:'₹799',originalPrice:'₹959'},
-      {name:'Dandruff Control Treatment',price:'₹2,999',originalPrice:'₹3,599'},{name:'Keratine Treatment',price:'₹3,999',originalPrice:'₹4,799'},
-      {name:'Hair Smoothening',price:'₹4,999',originalPrice:'₹5,999'},{name:'Hair Straightening',price:'₹4,999',originalPrice:'₹5,999'},
+      {name:'Hair Wash',price:'₹200'},{name:'Hair Wash + Conditioner',price:'₹300'},
+      {name:'Blowdry',price:'₹499'},{name:'Ironing',price:'₹799'},
+      {name:'Dandruff Control Treatment',price:'₹2,999'},{name:'Keratine Treatment',price:'₹3,999'},
+      {name:'Hair Smoothening',price:'₹4,999'},{name:'Hair Straightening',price:'₹4,999'},
     ],
   },
   {
     id:'bodyspa', title:'Regular Body Spa',
     gradient:'linear-gradient(160deg, #10101a, #08080d)',
     services:[
-      {name:'Face Massage',price:'₹350',originalPrice:'₹420'},{name:'Back Rejuvenation',price:'₹699',originalPrice:'₹839'},
-      {name:'Foot Reflexology',price:'₹349',originalPrice:'₹419'},{name:'Scalp Massage',price:'₹500',originalPrice:'₹600'},
-      {name:'Body Spa',price:'₹1,500',originalPrice:'₹1,800'},{name:'Body Polish',price:'₹3,500',originalPrice:'₹4,200'},
+      {name:'Face Massage',price:'₹350'},{name:'Back Rejuvenation',price:'₹699'},
+      {name:'Foot Reflexology',price:'₹349'},{name:'Scalp Massage',price:'₹500'},
+      {name:'Body Spa',price:'₹1,500'},{name:'Body Polish',price:'₹3,500'},
     ],
   },
   {
     id:'haircuts', title:'Hair Cuts',
     gradient:'linear-gradient(160deg, #2a1510, #150a08)',
     services:[
-      {name:'Straight Cut',price:'₹400',originalPrice:'₹480'},{name:'U/V Cut',price:'₹600',originalPrice:'₹720'},
-      {name:'Layer Cut',price:'₹750',originalPrice:'₹900'},{name:'Feather Cut',price:'₹1,000',originalPrice:'₹1,200'},
+      {name:'Straight Cut',price:'₹400'},{name:'U/V Cut',price:'₹600'},
+      {name:'Layer Cut',price:'₹750'},{name:'Feather Cut',price:'₹1,000'},
     ],
   },
   {
     id:'facials', title:'Facials',
     gradient:'linear-gradient(160deg, #1a0a15, #0d050a)',
     services:[
-      {name:'Clean Up',price:'₹599',originalPrice:'₹719'},{name:'Fruit Facial',price:'₹999',originalPrice:'₹1,199'},
-      {name:'Herbal Facial',price:'₹1,299',originalPrice:'₹1,559'},{name:'Insta Glow',price:'₹1,500',originalPrice:'₹1,800'},
-      {name:'Skin Tightening',price:'₹1,700',originalPrice:'₹2,040'},{name:'Pearl Facial',price:'₹1,800',originalPrice:'₹2,160'},
-      {name:'Acne Facial',price:'₹1,900',originalPrice:'₹2,280'},{name:'Gold Facial',price:'₹2,000',originalPrice:'₹2,400'},
-      {name:'Diamond Facial',price:'₹2,200',originalPrice:'₹2,640'},{name:'Radiance Facial',price:'₹2,500',originalPrice:'₹3,000'},
-      {name:'Skin Lighting',price:'₹3,000',originalPrice:'₹3,600'},{name:'Brightening',price:'₹3,500',originalPrice:'₹4,200'},
-      {name:'Dead Sea Minerals',price:'₹3,800',originalPrice:'₹4,560'},{name:'O3+ Whitening Facial',price:'₹4,000',originalPrice:'₹4,800'},
-      {name:'Gold Moroccan',price:'₹4,500',originalPrice:'₹5,400'},{name:'Bridal Special Facial',price:'₹5,000',originalPrice:'₹6,000'},
+      {name:'Clean Up',price:'₹599'},{name:'Fruit Facial',price:'₹999'},
+      {name:'Herbal Facial',price:'₹1,299'},{name:'Insta Glow',price:'₹1,500'},
+      {name:'Skin Tightening',price:'₹1,700'},{name:'Pearl Facial',price:'₹1,800'},
+      {name:'Acne Facial',price:'₹1,900'},{name:'Gold Facial',price:'₹2,000'},
+      {name:'Diamond Facial',price:'₹2,200'},{name:'Radiance Facial',price:'₹2,500'},
+      {name:'Skin Lighting',price:'₹3,000'},{name:'Brightening',price:'₹3,500'},
+      {name:'Dead Sea Minerals',price:'₹3,800'},{name:'O3+ Whitening Facial',price:'₹4,000'},
+      {name:'Gold Moroccan',price:'₹4,500'},{name:'Bridal Special Facial',price:'₹5,000'},
     ],
   },
   {
     id:'manicure', title:'Manicure',
     gradient:'linear-gradient(160deg, #1a0510, #0d0208)',
     services:[
-      {name:'Premium',price:'₹700',originalPrice:'₹840'},{name:'Dead Sea',price:'₹900',originalPrice:'₹1,080'},
-      {name:'Elite Strawberry',price:'₹1,100',originalPrice:'₹1,320'},{name:'Ice Cream',price:'₹1,400',originalPrice:'₹1,680'},
-      {name:'Cupcake',price:'₹1,400',originalPrice:'₹1,680'},
+      {name:'Premium',price:'₹700'},{name:'Dead Sea',price:'₹900'},
+      {name:'Elite Strawberry',price:'₹1,100'},{name:'Ice Cream',price:'₹1,400'},
+      {name:'Cupcake',price:'₹1,400'},
     ],
   },
   {
     id:'pedicure', title:'Pedicure',
     gradient:'linear-gradient(160deg, #0a0a1a, #05050d)',
     services:[
-      {name:'Premium',price:'₹800',originalPrice:'₹960'},{name:'Dead Sea',price:'₹1,000',originalPrice:'₹1,200'},
-      {name:'Elite Strawberry',price:'₹1,200',originalPrice:'₹1,440'},{name:'Ice Cream',price:'₹1,500',originalPrice:'₹1,800'},
-      {name:'Cup Cake',price:'₹1,500',originalPrice:'₹1,800'},
+      {name:'Premium',price:'₹800'},{name:'Dead Sea',price:'₹1,000'},
+      {name:'Elite Strawberry',price:'₹1,200'},{name:'Ice Cream',price:'₹1,500'},
+      {name:'Cup Cake',price:'₹1,500'},
     ],
   },
 ]
@@ -130,7 +130,7 @@ export default function ParlourContent() {
       <section className="relative pt-28 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[#0a0000]"/>
         <Image
-          src="/images/parlourservice.png"
+          src="/images/parlour.jpeg"
           alt="Parlour Services at Hola Beauty – Hair, Facial, Waxing & Spa"
           fill
           className="object-cover opacity-30"
@@ -311,12 +311,8 @@ function CategoryModal({ category, onClose }) {
                 fontSize:'15px', fontWeight:600,
                 color:'#f0d070', whiteSpace:'nowrap', marginLeft:'12px',
               }}>
-                {svc.originalPrice ? (
-                  <>
-                    <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.3)', fontWeight:400, marginRight:'6px', fontSize:'13px'}}>{svc.originalPrice}</span>
-                    {svc.price}
-                  </>
-                ) : svc.price}
+              <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.3)', fontWeight:400, marginRight:'6px', fontSize:'13px'}}>{boostPrice(svc.price)}</span>
+              {svc.price}
               </span>
             </div>
           ))}

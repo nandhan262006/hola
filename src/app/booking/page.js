@@ -4,6 +4,9 @@ export const metadata = {
   title: 'Book Appointment – Hola Beauty Parlour',
   description: 'Book your beauty appointment at Hola Beauty Parlour in Nellore. Bridal makeup, party makeup, facials, hair styling & home parlour services. Call +91 94909 39727 or book online.',
   keywords: ['book appointment Nellore', 'beauty parlour booking', 'bridal makeup booking Nellore', 'Hola Beauty appointment', 'salon booking Nellore', 'ladies parlour appointment'],
+  alternates: {
+    canonical: 'https://holabeauty.in/booking',
+  },
   openGraph: {
     title: 'Book Appointment – Hola Beauty Parlour',
     description: 'Book your bridal, party, or parlour appointment at Hola Beauty in Nellore.',

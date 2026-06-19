@@ -2,12 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import Footer from '@/components/Footer'
-import { SectionTitle, BookingCTA } from '@/components/SharedPage'
+import { SectionTitle, BookingCTA, boostPrice } from '@/components/SharedPage'
 
 export const metadata = {
   title: 'Makeup Services – Bridal, HD, Airbrush & Party Makeup',
   description: 'Professional bridal makeup, HD makeup, airbrush makeup, engagement makeup, reception makeup, party makeup, and photo shoot makeup in Nellore. Book your bridal package starting at ₹15,000.',
   keywords: ['bridal makeup Nellore', 'HD makeup Nellore', 'airbrush makeup Nellore', 'party makeup Nellore', 'engagement makeup Nellore', 'reception makeup Nellore', 'bridal makeup packages', 'makeup artist Nellore', 'bridal makeup near me', 'wedding makeup Nellore'],
+  alternates: {
+    canonical: 'https://holabeauty.in/makeup',
+  },
   openGraph: {
     title: 'Makeup Services – Bridal, HD & Airbrush Makeup Nellore',
     description: 'Expert bridal, HD, airbrush, party & engagement makeup in Nellore. Packages from ₹15,000.',
@@ -19,27 +22,27 @@ const categories = [
   {
     name: 'Party Makeup',
     tiers: [
-      { label: 'Normal', price: '₹4,999', originalPrice: '₹5,999' },
-      { label: 'HD', price: '₹5,999', originalPrice: '₹7,199' },
-      { label: 'Premium', price: '₹7,999', originalPrice: '₹9,599' },
+      { label: 'Normal', price: '₹4,999' },
+      { label: 'HD', price: '₹5,999' },
+      { label: 'Premium', price: '₹7,999' },
     ],
     gradient: 'linear-gradient(160deg, #2a1210, #150808)',
   },
   {
     name: 'Engagement Makeup',
     tiers: [
-      { label: 'Normal', price: '₹6,499', originalPrice: '₹7,799' },
-      { label: 'HD', price: '₹7,999', originalPrice: '₹9,599' },
-      { label: 'Premium', price: '₹9,999', originalPrice: '₹11,999' },
+      { label: 'Normal', price: '₹6,499' },
+      { label: 'HD', price: '₹7,999' },
+      { label: 'Premium', price: '₹9,999' },
     ],
     gradient: 'linear-gradient(160deg, #2a0a15, #150508)',
   },
   {
     name: 'Bridal Makeup',
     tiers: [
-      { label: 'Normal', price: '₹7,999', originalPrice: '₹9,599' },
-      { label: 'HD', price: '₹9,999', originalPrice: '₹11,999' },
-      { label: 'Premium', price: '₹14,999', originalPrice: '₹17,999' },
+      { label: 'Normal', price: '₹7,999' },
+      { label: 'HD', price: '₹9,999' },
+      { label: 'Premium', price: '₹14,999' },
     ],
     gradient: 'linear-gradient(160deg, #3a0d0d, #1a0505)',
     popular: true,
@@ -47,27 +50,27 @@ const categories = [
   {
     name: 'Reception Makeup',
     tiers: [
-      { label: 'Normal', price: '₹6,999', originalPrice: '₹8,399' },
-      { label: 'HD', price: '₹8,999', originalPrice: '₹10,799' },
-      { label: 'Premium', price: '₹10,999', originalPrice: '₹13,199' },
+      { label: 'Normal', price: '₹6,999' },
+      { label: 'HD', price: '₹8,999' },
+      { label: 'Premium', price: '₹10,999' },
     ],
     gradient: 'linear-gradient(160deg, #1a0a20, #0d0510)',
   },
   {
     name: 'Side Makeup',
     tiers: [
-      { label: 'Normal', price: '₹3,999', originalPrice: '₹4,799' },
-      { label: 'HD', price: '₹4,999', originalPrice: '₹5,999' },
-      { label: 'Premium', price: '₹6,999', originalPrice: '₹8,399' },
+      { label: 'Normal', price: '₹3,999' },
+      { label: 'HD', price: '₹4,999' },
+      { label: 'Premium', price: '₹6,999' },
     ],
     gradient: 'linear-gradient(160deg, #2a0510, #150208)',
   },
   {
     name: 'Photo Shoot Makeup',
     tiers: [
-      { label: 'Normal', price: '₹7,999', originalPrice: '₹9,599' },
-      { label: 'HD', price: '₹9,999', originalPrice: '₹11,999' },
-      { label: 'Premium', price: '₹12,999', originalPrice: '₹15,599' },
+      { label: 'Normal', price: '₹7,999' },
+      { label: 'HD', price: '₹9,999' },
+      { label: 'Premium', price: '₹12,999' },
     ],
     gradient: 'linear-gradient(160deg, #0d1a2a, #050d15)',
   },
@@ -185,12 +188,8 @@ function PricingCard({ name, tiers, gradient, popular }) {
               fontSize:'15px', fontWeight:600,
               color:'#f0d070',
             }}>
-              {tier.originalPrice ? (
-                <>
-                  <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.3)', fontWeight:400, marginRight:'6px', fontSize:'13px'}}>{tier.originalPrice}</span>
-                  {tier.price}
-                </>
-              ) : tier.price}
+              <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.3)', fontWeight:400, marginRight:'6px', fontSize:'13px'}}>{boostPrice(tier.price)}</span>
+              {tier.price}
             </span>
           </div>
         ))}

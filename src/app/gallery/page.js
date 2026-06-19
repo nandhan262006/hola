@@ -5,6 +5,9 @@ export const metadata = {
   title: 'Gallery – Bridal Makeup & Beauty Portfolio',
   description: 'Browse our portfolio of bridal makeup, party makeup, hair styling, facials, and beauty transformations at Hola Beauty Parlour in Nellore.',
   keywords: ['bridal makeup gallery Nellore', 'beauty parlour portfolio', 'makeup before after Nellore', 'Hola Beauty gallery', 'bridal looks Nellore'],
+  alternates: {
+    canonical: 'https://holabeauty.in/gallery',
+  },
   openGraph: {
     title: 'Gallery – Hola Beauty Parlour Nellore',
     description: 'See our bridal makeup, hair, facial & beauty transformations portfolio.',
