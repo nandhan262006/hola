@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Footer from '@/components/Footer'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 let videoPlayed = false
 
@@ -10,8 +10,27 @@ export default function HomeContent() {
   const [showVideo, setShowVideo] = useState(false)
   const [slideUp, setSlideUp] = useState(false)
   const [hidden, setHidden] = useState(true)
+  const [lightboxIndex, setLightboxIndex] = useState(-1)
   const videoRef = useRef(null)
   const hasEnded = useRef(false)
+  const closeLightbox = useCallback(() => setLightboxIndex(-1), [])
+
+  useEffect(() => {
+    if (lightboxIndex < 0) return
+    const handler = (e) => { if (e.key === 'Escape') closeLightbox() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [lightboxIndex, closeLightbox])
+
+  const portfolioImages = [
+    '/images/portfolio.png',
+    '/images/portfolio1.png',
+    '/images/portfolio2.png',
+    '/images/portfolio3.png',
+    '/images/portfolio4.png',
+    '/images/portfolio5.png',
+    '/images/portfolio6.png',
+  ]
 
   useEffect(() => {
     if (videoPlayed) return
@@ -570,20 +589,13 @@ export default function HomeContent() {
           <div style={{
             display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'12px',
           }}>
-            {[
-  { src:'/images/portfolio.png', span:'' },
-  { src:'/images/portfolio1.png', span:'' },
-  { src:'/images/portfolio2.png', span:'' },
-  { src:'/images/portfolio3.png', span:'' },
-  { src:'/images/portfolio4.png', span:'' },
-  { src:'/images/portfolio5.png', span:'' },
-  { src:'/images/portfolio6.png', span:'' },
-].map((img,i)=>(
-              <div key={i} style={{
+            {portfolioImages.map((src,i)=>(
+              <div key={i} onClick={() => setLightboxIndex(i)} style={{
                 position:'relative', aspectRatio:'5/6', overflow:'hidden', borderRadius:'4px',
+                cursor:'pointer',
               }}>
                 <Image
-                  src={img.src}
+                  src={src}
                   alt={`Hola Beauty Portfolio ${i + 1} – Bridal & Beauty Work`}
                   fill
                   style={{objectFit:'cover', objectPosition: i >= 3 && i <= 5 ? 'center 25%' : 'center'}}
@@ -715,6 +727,29 @@ export default function HomeContent() {
       </section>
 
       <Footer/>
+
+      {lightboxIndex >= 0 && (
+        <div onClick={() => setLightboxIndex(-1)} style={{
+          position:'fixed', inset:0, zIndex:9999,
+          display:'flex', alignItems:'center', justifyContent:'center',
+          background:'rgba(0,0,0,0.95)', padding:'16px', cursor:'pointer',
+        }}>
+          <button onClick={() => setLightboxIndex(-1)} style={{
+            position:'absolute', top:'16px', right:'16px', zIndex:10,
+            color:'rgba(255,255,255,0.6)', background:'none', border:'none',
+            fontSize:'28px', cursor:'pointer', lineHeight:1,
+          }}>✕</button>
+          <img
+            src={portfolioImages[lightboxIndex]}
+            alt={`Hola Beauty Portfolio ${lightboxIndex + 1}`}
+            onClick={e => e.stopPropagation()}
+            style={{
+              maxWidth:'100%', maxHeight:'90vh', objectFit:'contain',
+              borderRadius:'8px', cursor:'default',
+            }}
+          />
+        </div>
+      )}
     </>
   )
 }

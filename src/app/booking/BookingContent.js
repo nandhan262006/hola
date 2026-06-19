@@ -98,7 +98,7 @@ export default function BookingContent() {
                         <rect x="2" y="4" width="20" height="16" rx="2"/>
                         <path d="M22 7l-10 7L2 7"/>
                       </svg>
-                      Send Booking Request
+                      Click Now and Get 20% Off
                     </>
                   )}
                 </button>
@@ -114,9 +114,18 @@ export default function BookingContent() {
                   </p>
                 )}
 
-                <p style={{color:'rgba(255,255,255,0.25)', fontSize:'12px', textAlign:'center'}}>
-                  We'll confirm your appointment within 24 hours!
-                </p>
+                <div style={{
+                  background:'linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04))',
+                  border:'1px solid rgba(201,168,76,0.3)', borderRadius:'2px',
+                  padding:'14px 18px', textAlign:'center',
+                }}>
+                  <p style={{
+                    fontFamily:'Cormorant Garamond, serif',
+                    color:'#f0d070', fontSize:'15px', fontWeight:700, margin:0,
+                  }}>
+                    🎉 Click Now and Get <span style={{color:'#c9a84c', fontSize:'18px'}}>20% Off</span> on Your Total Bill!
+                  </p>
+                </div>
               </form>
             </div>
           </div>

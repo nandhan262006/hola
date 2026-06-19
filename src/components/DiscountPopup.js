@@ -71,7 +71,7 @@ export default function DiscountPopup() {
           onMouseEnter={e => { e.currentTarget.style.background = '#f0d070'; e.currentTarget.style.transform = 'scale(1.05)' }}
           onMouseLeave={e => { e.currentTarget.style.background = '#c9a84c'; e.currentTarget.style.transform = 'scale(1)' }}
         >
-          Click Here
+          Click Now and Get 20% Off
         </Link>
       </div>
       <style>{`
