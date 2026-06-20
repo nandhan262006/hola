@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import Footer from '@/components/Footer'
 import { SectionTitle, ServiceItem, BookingCTA } from '@/components/SharedPage'
-import { getServiceImageUrl } from '@/lib/getServiceImage'
 
 export const metadata = {
   title: 'Home Parlour Services – Beauty at Your Doorstep Nellore',
@@ -38,7 +37,7 @@ const howItWorks = [
 ]
 
 export default async function HomeParlourPage() {
-  const heroImage = await getServiceImageUrl('home-parlour')
+  const heroImage = null
 
   return (
     <>

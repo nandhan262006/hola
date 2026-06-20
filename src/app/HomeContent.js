@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Footer from '@/components/Footer'
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { client, urlFor } from '@/lib/sanity'
 
 let videoPlayed = false
 
@@ -42,18 +41,7 @@ export default function HomeContent() {
   }, [])
 
   useEffect(() => {
-    const query = `*[_type == "serviceCard"]{slug, image}`
-    client.fetch(query).then((docs) => {
-      const map = {}
-      if (docs) {
-        docs.forEach((doc) => {
-          if (doc?.image) {
-            map[doc.slug?.current] = urlFor(doc.image).width(800).quality(80).url()
-          }
-        })
-      }
-      setImages(map)
-    }).catch(() => setImages({}))
+    setImages({})
   }, [])
 
   useEffect(() => {

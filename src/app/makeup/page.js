@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import Footer from '@/components/Footer'
 import { SectionTitle, BookingCTA, boostPrice } from '@/components/SharedPage'
-import { getServiceImageUrl } from '@/lib/getServiceImage'
 
 export const metadata = {
   title: 'Makeup Services – Bridal, HD, Airbrush & Party Makeup',
@@ -78,7 +77,7 @@ const categories = [
 ]
 
 export default async function MakeupPage() {
-  const heroImage = await getServiceImageUrl('makeup')
+  const heroImage = null
 
   return (
     <>

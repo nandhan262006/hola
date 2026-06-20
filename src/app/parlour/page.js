@@ -1,5 +1,4 @@
 import ParlourContent from './ParlourContent'
-import { getServiceImageUrl } from '@/lib/getServiceImage'
 
 export const metadata = {
   title: 'Parlour Services – Hair, Facial, Waxing, Spa & More',
@@ -16,6 +15,6 @@ export const metadata = {
 }
 
 export default async function ParlourPage() {
-  const heroImage = await getServiceImageUrl('parlour')
+  const heroImage = null
   return <ParlourContent heroImage={heroImage} />
 }
