@@ -122,7 +122,7 @@ const categories = [
   },
 ]
 
-export default function ParlourContent() {
+export default function ParlourContent({ heroImage }) {
   const [activeCategory, setActiveCategory] = useState(null)
 
   return (
@@ -130,7 +130,7 @@ export default function ParlourContent() {
       <section className="relative pt-28 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[#0a0000]"/>
         <Image
-          src="/images/parlour.jpeg"
+          src={heroImage || '/images/parlour.jpeg'}
           alt="Parlour Services at Hola Beauty – Hair, Facial, Waxing & Spa"
           fill
           className="object-cover opacity-30"

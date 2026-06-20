@@ -3,10 +3,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Footer from '@/components/Footer'
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { client, urlFor } from '@/lib/sanity'
 
 let videoPlayed = false
 
 export default function HomeContent() {
+  const [images, setImages] = useState({})
   const [showVideo, setShowVideo] = useState(false)
   const [slideUp, setSlideUp] = useState(false)
   const [hidden, setHidden] = useState(true)
@@ -37,6 +39,19 @@ export default function HomeContent() {
     videoPlayed = true
     setShowVideo(true)
     setHidden(false)
+  }, [])
+
+  useEffect(() => {
+    const query = `*[_type == "serviceImage"]{service, image}`
+    client.fetch(query).then((docs) => {
+      const map = {}
+      docs.forEach((doc) => {
+        if (doc?.image) {
+          map[doc.service] = urlFor(doc.image).width(800).quality(80).url()
+        }
+      })
+      setImages(map)
+    })
   }, [])
 
   useEffect(() => {
@@ -324,19 +339,19 @@ export default function HomeContent() {
           <div className="svc-grid" style={{display:'grid',gap:'24px'}}>
             <ServiceCard
               href="/makeup"
-              imgSrc="/images/makeup.jpeg"
+              imgSrc={images['makeup'] || '/images/makeup.jpeg'}
               title="Makeup Services"
               desc="Professional bridal, party, engagement, and fashion makeup with flawless finishing."
             />
             <ServiceCard
               href="/parlour"
-              imgSrc="/images/parlour.jpeg"
+              imgSrc={images['parlour'] || '/images/parlour.jpeg'}
               title="Parlour Services"
               desc="Hair styling, facials, skincare, spa, threading, manicure, pedicure, and beauty treatments."
             />
             <ServiceCard
               href="/home-parlour"
-              imgSrc="/images/homeparloue.jpeg"
+              imgSrc={images['home-parlour'] || '/images/homeparloue.jpeg'}
               title="Home Parlour Services"
               desc="Luxury beauty services at your doorstep for weddings, functions, and special occasions."
             />

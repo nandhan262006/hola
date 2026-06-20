@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import Footer from '@/components/Footer'
 import { SectionTitle, BookingCTA, boostPrice } from '@/components/SharedPage'
+import { getServiceImageUrl } from '@/lib/getServiceImage'
 
 export const metadata = {
   title: 'Makeup Services – Bridal, HD, Airbrush & Party Makeup',
@@ -76,13 +77,15 @@ const categories = [
   },
 ]
 
-export default function MakeupPage() {
+export default async function MakeupPage() {
+  const heroImage = await getServiceImageUrl('makeup')
+
   return (
     <>
       <section className="relative pt-28 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[#0a0000]"/>
         <Image
-          src="/images/makeupservice.png"
+          src={heroImage || '/images/makeupservice.png'}
           alt="Hola Beauty Makeup Services – Bridal, HD & Party Makeup Nellore"
           fill
           className="object-cover opacity-30"
