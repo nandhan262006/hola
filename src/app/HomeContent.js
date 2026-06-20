@@ -45,13 +45,15 @@ export default function HomeContent() {
     const query = `*[_type == "serviceCard"]{slug, image}`
     client.fetch(query).then((docs) => {
       const map = {}
-      docs.forEach((doc) => {
-        if (doc?.image) {
-          map[doc.slug?.current] = urlFor(doc.image).width(800).quality(80).url()
-        }
-      })
+      if (docs) {
+        docs.forEach((doc) => {
+          if (doc?.image) {
+            map[doc.slug?.current] = urlFor(doc.image).width(800).quality(80).url()
+          }
+        })
+      }
       setImages(map)
-    })
+    }).catch(() => setImages({}))
   }, [])
 
   useEffect(() => {
