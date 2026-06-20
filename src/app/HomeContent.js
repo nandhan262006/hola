@@ -42,12 +42,12 @@ export default function HomeContent() {
   }, [])
 
   useEffect(() => {
-    const query = `*[_type == "serviceImage"]{service, image}`
+    const query = `*[_type == "serviceCard"]{slug, image}`
     client.fetch(query).then((docs) => {
       const map = {}
       docs.forEach((doc) => {
         if (doc?.image) {
-          map[doc.service] = urlFor(doc.image).width(800).quality(80).url()
+          map[doc.slug?.current] = urlFor(doc.image).width(800).quality(80).url()
         }
       })
       setImages(map)

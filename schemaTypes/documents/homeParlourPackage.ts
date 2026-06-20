@@ -2,48 +2,66 @@ import { defineType, defineField } from 'sanity'
 
 export const homeParlourPackage = defineType({
   name: 'homeParlourPackage',
-  title: 'Home Parlour Package (Home Parlour Page)',
+  title: 'Home Parlour Packages (All in One)',
   type: 'document',
-  description: 'HOME PARLOUR PAGE > Service Packages. APPEND one document per package you offer at home.',
+  description: 'HOME PARLOUR PAGE > All home service packages in one place. Only 1 document needed. APPEND or edit packages below.',
   fields: [
     defineField({
-      name: 'name',
-      title: 'Package Name',
+      name: 'title',
+      title: 'Label (for your reference)',
       type: 'string',
-      description: 'REPLACE: Name of the home service (e.g. "Bridal Home Package", "Home Facial").',
-      validation: (Rule) => Rule.required(),
+      description: 'Just a name so you know what this is.',
+      initialValue: 'Home Parlour Packages',
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-      rows: 3,
-      description: 'REPLACE: What this package includes. Shows on the service card.',
+      name: 'packages',
+      title: 'Home Service Packages',
+      type: 'array',
+      description: 'APPEND a package (Bridal Home Package, Home Facial, etc.) and set price and description.',
+      of: [
+        {
+          type: 'object',
+          name: 'package',
+          title: 'Package',
+          fields: [
+            {
+              name: 'name',
+              title: 'Package Name',
+              type: 'string',
+              description: 'e.g. "Bridal Home Package", "Home Facial"',
+            },
+            {
+              name: 'description',
+              title: 'Description',
+              type: 'text',
+              rows: 3,
+              description: 'What this package includes.',
+            },
+            {
+              name: 'price',
+              title: 'Starting Price (Rs)',
+              type: 'number',
+              description: 'Starting or base price in rupees.',
+            },
+            {
+              name: 'image',
+              title: 'Package Image',
+              type: 'image',
+              options: { hotspot: true },
+              description: 'Optional image for this package.',
+            },
+          ],
+          preview: {
+            select: { title: 'name', subtitle: 'price' },
+            prepare({ title, subtitle }: { title?: string; subtitle?: number }) {
+              return { title, subtitle: subtitle ? 'Rs ' + subtitle.toLocaleString() : 'No price' }
+            },
+          },
+        },
+      ],
     }),
-    defineField({
-      name: 'price',
-      title: 'Starting Price (Rs)',
-      type: 'number',
-      description: 'REPLACE: Starting price or base price in rupees.',
-    }),
-    defineField({
-      name: 'order',
-      title: 'Display Order',
-      type: 'number',
-      description: 'REPLACE: Order to show packages (1, 2, 3...).',
-    }),
-    defineField({
-      name: 'image',
-      title: 'Package Image',
-      type: 'image',
-      options: { hotspot: true },
-      description: 'REPLACE: Optional image for this home parlour package.',
-    }),
-  ],
-  orderings: [
-    { title: 'Order', name: 'order', by: [{ field: 'order', direction: 'asc' }] },
   ],
   preview: {
-    select: { title: 'name', subtitle: 'description', media: 'image' },
+    select: { title: 'title' },
   },
 })

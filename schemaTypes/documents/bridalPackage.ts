@@ -2,65 +2,79 @@ import { defineType, defineField } from 'sanity'
 
 export const bridalPackage = defineType({
   name: 'bridalPackage',
-  title: 'Bridal Package (Homepage)',
+  title: 'Bridal Packages (All in One)',
   type: 'document',
-  description: 'HOME PAGE > Bridal Packages Section. APPEND/CREATE one document per package tier. Shows 3 packages side by side.',
+  description: 'HOME PAGE > All bridal packages in one place. Only 1 document needed. APPEND or edit packages below.',
   fields: [
     defineField({
-      name: 'name',
-      title: 'Package Name',
+      name: 'title',
+      title: 'Label (for your reference)',
       type: 'string',
-      description: 'REPLACE: Name of the package (e.g. "Timeless Elegance", "Picture-Perfect Glow").',
-      validation: (Rule) => Rule.required(),
+      description: 'Just a name so you know what this is.',
+      initialValue: 'Bridal Packages',
     }),
     defineField({
-      name: 'price',
-      title: 'Price (Rs)',
-      type: 'number',
-      description: 'REPLACE: The actual price in rupees (e.g. 15000 for Rs 15,000).',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-      rows: 3,
-      description: 'REPLACE: What this package includes. Shows below the price.',
-    }),
-    defineField({
-      name: 'features',
-      title: 'Features List',
+      name: 'packages',
+      title: 'Bridal Package Tiers',
       type: 'array',
-      of: [{ type: 'string' }],
-      description: 'REPLACE: APPEND bullet points of what\'s included (e.g. "Professional HD Makeup", "Hair Styling"). Each entry is one bullet.',
+      description: 'APPEND a package tier (Timeless Elegance, Picture-Perfect Glow, etc.) and fill in price and details.',
+      of: [
+        {
+          type: 'object',
+          name: 'package',
+          title: 'Package',
+          fields: [
+            {
+              name: 'name',
+              title: 'Package Name',
+              type: 'string',
+              description: 'e.g. "Timeless Elegance", "Picture-Perfect Glow"',
+            },
+            {
+              name: 'price',
+              title: 'Price (Rs)',
+              type: 'number',
+              description: 'Price in rupees (e.g. 15000 for Rs 15,000).',
+            },
+            {
+              name: 'description',
+              title: 'Description',
+              type: 'text',
+              rows: 3,
+              description: 'What this package includes.',
+            },
+            {
+              name: 'features',
+              title: 'Features List',
+              type: 'array',
+              of: [{ type: 'string' }],
+              description: 'APPEND bullet points of what is included. Each entry is one bullet.',
+            },
+            {
+              name: 'badge',
+              title: 'Badge Text',
+              type: 'string',
+              description: 'Optional badge like "Most Popular" or "Best Value". Leave empty for no badge.',
+            },
+            {
+              name: 'image',
+              title: 'Package Image',
+              type: 'image',
+              options: { hotspot: true },
+              description: 'Optional image for this package.',
+            },
+          ],
+          preview: {
+            select: { title: 'name', subtitle: 'price' },
+            prepare({ title, subtitle }: { title?: string; subtitle?: number }) {
+              return { title, subtitle: subtitle ? 'Rs ' + subtitle.toLocaleString() : 'No price' }
+            },
+          },
+        },
+      ],
     }),
-    defineField({
-      name: 'badge',
-      title: 'Badge Text',
-      type: 'string',
-      description: 'REPLACE: Optional badge on the card (e.g. "Most Popular", "Best Value"). Leave empty for no badge.',
-    }),
-    defineField({
-      name: 'order',
-      title: 'Display Order',
-      type: 'number',
-      description: 'REPLACE: Order to show packages (1, 2, 3).',
-    }),
-    defineField({
-      name: 'image',
-      title: 'Package Image',
-      type: 'image',
-      options: { hotspot: true },
-      description: 'REPLACE: Optional image for this package card.',
-    }),
-  ],
-  orderings: [
-    { title: 'Order', name: 'order', by: [{ field: 'order', direction: 'asc' }] },
   ],
   preview: {
-    select: { title: 'name', subtitle: 'price' },
-    prepare({ title, subtitle }) {
-      return { title, subtitle: 'Rs ' + subtitle?.toLocaleString() || 'No price' }
-    },
+    select: { title: 'title' },
   },
 })

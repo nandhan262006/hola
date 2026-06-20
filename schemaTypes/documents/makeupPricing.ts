@@ -2,53 +2,68 @@ import { defineType, defineField } from 'sanity'
 
 export const makeupPricing = defineType({
   name: 'makeupPricing',
-  title: 'Makeup Service (Pricing Page)',
+  title: 'Makeup Prices (All in One)',
   type: 'document',
-  description: 'MAKEUP PAGE > Pricing Section. APPEND one document per makeup category (Party, Bridal, Engagement, etc.).',
+  description: 'MAKEUP PAGE > All prices in one place. Only 1 document needed. APPEND or edit categories in the list below.',
   fields: [
     defineField({
-      name: 'categoryName',
-      title: 'Category Name',
+      name: 'title',
+      title: 'Label (for your reference)',
       type: 'string',
-      description: 'REPLACE: Name of the makeup category (e.g. "Party Makeup", "Bridal Makeup").',
-      validation: (Rule) => Rule.required(),
+      description: 'Just a name so you know what this is.',
+      initialValue: 'Makeup Prices',
     }),
     defineField({
-      name: 'order',
-      title: 'Display Order',
-      type: 'number',
-      description: 'REPLACE: Order to show categories (1, 2, 3...).',
-    }),
-    defineField({
-      name: 'tiers',
-      title: 'Pricing Tiers',
+      name: 'categories',
+      title: 'Makeup Categories with Prices',
       type: 'array',
-      description: 'APPEND: Add Normal, HD, and Premium pricing tiers for this category.',
+      description: 'APPEND a new category (Party, Bridal, Engagement, etc.) and set its pricing tiers.',
       of: [
         {
           type: 'object',
-          name: 'tier',
-          title: 'Tier',
+          name: 'category',
+          title: 'Category',
           fields: [
-            { name: 'label', title: 'Tier Label', type: 'string', description: 'e.g. "Normal", "HD", "Premium"' },
-            { name: 'price', title: 'Price (Rs)', type: 'number', description: 'The price in rupees.' },
-            { name: 'isPopular', title: 'Mark as Popular', type: 'boolean', description: 'Toggle ON if this is the most popular tier.' },
+            {
+              name: 'categoryName',
+              title: 'Category Name',
+              type: 'string',
+              description: 'e.g. "Party Makeup", "Bridal Makeup"',
+            },
+            {
+              name: 'tiers',
+              title: 'Pricing Tiers (Normal / HD / Premium)',
+              type: 'array',
+              description: 'Add Normal, HD, and Premium pricing.',
+              of: [
+                {
+                  type: 'object',
+                  name: 'tier',
+                  title: 'Tier',
+                  fields: [
+                    { name: 'label', title: 'Tier Label', type: 'string', description: 'e.g. "Normal", "HD", "Premium"' },
+                    { name: 'price', title: 'Price (Rs)', type: 'number', description: 'Price in rupees.' },
+                    { name: 'isPopular', title: 'Mark as Popular', type: 'boolean', description: 'Toggle ON for the most popular tier.' },
+                  ],
+                },
+              ],
+            },
+            {
+              name: 'image',
+              title: 'Category Image',
+              type: 'image',
+              options: { hotspot: true },
+              description: 'Optional image for this category.',
+            },
           ],
+          preview: {
+            select: { title: 'categoryName' },
+          },
         },
       ],
     }),
-    defineField({
-      name: 'image',
-      title: 'Category Image',
-      type: 'image',
-      options: { hotspot: true },
-      description: 'REPLACE: Optional image for this makeup category card.',
-    }),
-  ],
-  orderings: [
-    { title: 'Order', name: 'order', by: [{ field: 'order', direction: 'asc' }] },
   ],
   preview: {
-    select: { title: 'categoryName' },
+    select: { title: 'title' },
   },
 })

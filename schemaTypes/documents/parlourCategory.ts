@@ -2,52 +2,67 @@ import { defineType, defineField } from 'sanity'
 
 export const parlourCategory = defineType({
   name: 'parlourCategory',
-  title: 'Parlour Service (Parlour Page)',
+  title: 'Parlour Prices (All in One)',
   type: 'document',
-  description: 'PARLOUR PAGE > Services Grid. APPEND one document per parlour service category (Threading, Bleach, Facial, etc.).',
+  description: 'PARLOUR PAGE > All parlour services and prices in one place. Only 1 document needed. APPEND or edit categories below.',
   fields: [
     defineField({
-      name: 'categoryName',
-      title: 'Category Name',
+      name: 'title',
+      title: 'Label (for your reference)',
       type: 'string',
-      description: 'REPLACE: Name of the parlour service (e.g. "Threading", "Facial", "Bleach").',
-      validation: (Rule) => Rule.required(),
+      description: 'Just a name so you know what this is.',
+      initialValue: 'Parlour Prices',
     }),
     defineField({
-      name: 'order',
-      title: 'Display Order',
-      type: 'number',
-      description: 'REPLACE: Order to show categories (1, 2, 3...).',
-    }),
-    defineField({
-      name: 'items',
-      title: 'Service Items (with Prices)',
+      name: 'categories',
+      title: 'Parlour Service Categories with Prices',
       type: 'array',
-      description: 'APPEND: Add individual services under this category with their prices.',
+      description: 'APPEND a new category (Threading, Facial, Bleach, etc.) and add service items with prices.',
       of: [
         {
           type: 'object',
-          name: 'item',
-          title: 'Service Item',
+          name: 'category',
+          title: 'Category',
           fields: [
-            { name: 'name', title: 'Service Name', type: 'string', description: 'e.g. "Eyebrow Threading"' },
-            { name: 'price', title: 'Price (Rs)', type: 'number', description: 'The price in rupees.' },
+            {
+              name: 'categoryName',
+              title: 'Category Name',
+              type: 'string',
+              description: 'e.g. "Threading", "Facial", "Bleach"',
+            },
+            {
+              name: 'items',
+              title: 'Service Items (with Prices)',
+              type: 'array',
+              description: 'Add individual services and their prices under this category.',
+              of: [
+                {
+                  type: 'object',
+                  name: 'item',
+                  title: 'Service Item',
+                  fields: [
+                    { name: 'name', title: 'Service Name', type: 'string', description: 'e.g. "Eyebrow Threading"' },
+                    { name: 'price', title: 'Price (Rs)', type: 'number', description: 'Price in rupees.' },
+                  ],
+                },
+              ],
+            },
+            {
+              name: 'image',
+              title: 'Category Image',
+              type: 'image',
+              options: { hotspot: true },
+              description: 'Optional image for this category card.',
+            },
           ],
+          preview: {
+            select: { title: 'categoryName' },
+          },
         },
       ],
     }),
-    defineField({
-      name: 'image',
-      title: 'Category Image',
-      type: 'image',
-      options: { hotspot: true },
-      description: 'REPLACE: Optional image for this parlour service card.',
-    }),
-  ],
-  orderings: [
-    { title: 'Order', name: 'order', by: [{ field: 'order', direction: 'asc' }] },
   ],
   preview: {
-    select: { title: 'categoryName' },
+    select: { title: 'title' },
   },
 })
