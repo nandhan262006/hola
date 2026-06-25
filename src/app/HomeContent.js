@@ -78,23 +78,28 @@ export default function HomeContent() {
         background:'#000',
         pointerEvents: hidden ? 'none' : 'auto',
         visibility: hidden ? 'hidden' : 'visible',
-        transform: slideUp ? 'translateY(-100%)' : 'translateY(0)',
-        transition:'transform 0.8s cubic-bezier(0.77,0,0.18,1), visibility 0s 0.8s',
+        transition:'visibility 0s 0.8s',
       }}>
         <div style={{
-          position:'absolute', inset:0,
-          display:'flex', alignItems:'center', justifyContent:'center',
-          overflow:'hidden',
+          position:'absolute', inset:0, overflow:'hidden',
+          top: slideUp ? '-100%' : '0',
+          transition:'top 0.8s cubic-bezier(0.77,0,0.18,1)',
         }}>
           <video
             ref={videoRef}
             muted
             playsInline
             disablePictureInPicture
-            className="intro-video"
             onClick={() => {
               setSlideUp(true)
               setTimeout(() => setHidden(true), 800)
+            }}
+            style={{
+              position:'absolute',
+              top:'50%', left:'50%',
+              minWidth:'100%', minHeight:'100%',
+              width:'auto', height:'auto',
+              transform:'translate(-50%,-50%)',
             }}
           >
             <source src="/images/laptopopentitles.mp4" media="(min-width: 768px)" />

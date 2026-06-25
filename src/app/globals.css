@@ -30,14 +30,7 @@ body {
   }
 }
 
-/* ── INTRO VIDEO ── */
-.intro-video {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  flex-shrink: 0;
-}
+
 
 /* ── FADE IN UP ── */
 @keyframes fadeInUp {
