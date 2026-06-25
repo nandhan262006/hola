@@ -74,16 +74,17 @@ export default function HomeContent() {
     <>
       {showVideo && (
       <div style={{
-        position:'fixed', top:0, left:0, right:0, bottom:0, zIndex:9999, overflow:'hidden',
+        position:'fixed', top:0, left:0, right:0, bottom:0, zIndex:9999,
         background:'#000',
         pointerEvents: hidden ? 'none' : 'auto',
         visibility: hidden ? 'hidden' : 'visible',
-        transition:'visibility 0s 0.8s',
+        transform: slideUp ? 'translateY(-100%)' : 'translateY(0)',
+        transition:'transform 0.8s cubic-bezier(0.77,0,0.18,1), visibility 0s 0.8s',
       }}>
         <div style={{
-          width:'100%', height:'100%',
-          transform: slideUp ? 'translateY(-100%)' : 'translateY(0)',
-          transition:'transform 0.8s cubic-bezier(0.77,0,0.18,1)',
+          position:'absolute', inset:0,
+          display:'flex', alignItems:'center', justifyContent:'center',
+          overflow:'hidden',
         }}>
           <video
             ref={videoRef}
@@ -91,7 +92,6 @@ export default function HomeContent() {
             playsInline
             disablePictureInPicture
             className="intro-video"
-            style={{width:'100%', height:'100%', objectFit:'cover'}}
             onClick={() => {
               setSlideUp(true)
               setTimeout(() => setHidden(true), 800)
