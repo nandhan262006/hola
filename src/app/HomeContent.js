@@ -82,26 +82,23 @@ export default function HomeContent() {
       }}>
         <div style={{
           position:'absolute', inset:0, overflow:'hidden',
-          display:'flex', alignItems:'center', justifyContent:'center',
           transform: slideUp ? 'translateY(-100%)' : 'translateY(0)',
           transition:'transform 0.8s cubic-bezier(0.77,0,0.18,1)',
         }}>
-          <div className="intro-video-box">
-            <video
-              ref={videoRef}
-              muted
-              playsInline
-              disablePictureInPicture
-              onClick={() => {
-                setSlideUp(true)
-                setTimeout(() => setHidden(true), 800)
-              }}
-              style={{width:'100%', height:'100%', objectFit:'cover', display:'block'}}
-            >
-              <source src="/images/laptopopentitles.mp4" media="(min-width: 768px)" />
-              <source src="/images/opentitles.mp4" />
-            </video>
-          </div>
+          <video
+            ref={videoRef}
+            muted
+            playsInline
+            disablePictureInPicture
+            onClick={() => {
+              setSlideUp(true)
+              setTimeout(() => setHidden(true), 800)
+            }}
+            style={{width:'100%', height:'100%', objectFit:'cover'}}
+          >
+            <source src="/images/laptopopentitles.mp4" media="(min-width: 768px)" />
+            <source src="/images/opentitles.mp4" />
+          </video>
         </div>
       </div>
       )}
