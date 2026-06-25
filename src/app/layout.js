@@ -35,9 +35,11 @@ export const metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
+  icons: {
+    icon: '/favicon.svg',
+  },
   verification: {
     google: 'YOUR_GOOGLE_VERIFICATION_CODE',
-    // Replace with your Google Search Console verification code
   },
   alternates: {
     canonical: 'https://holabeauty.in',

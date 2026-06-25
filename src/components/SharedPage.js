@@ -23,7 +23,7 @@ export function PageHero({ title, tagline, icon, breadcrumb }) {
           <span>›</span>
           <span className="text-[#c9a84c]">{breadcrumb}</span>
         </div>
-        <h1 className="text-5xl md:text-6xl font-black mb-3 gold-shimmer" style={{fontFamily:'Playfair Display, serif'}}>
+        <h1 className="hero-h1 font-black mb-3 gold-shimmer" style={{fontFamily:'Playfair Display, serif'}}>
           {title}
         </h1>
         <p className="text-white/40 italic" style={{fontFamily:'Great Vibes, cursive', fontSize:'28px'}}>{tagline}</p>

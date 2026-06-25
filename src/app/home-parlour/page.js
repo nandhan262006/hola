@@ -44,7 +44,7 @@ export default async function HomeParlourPage() {
       <section className="relative pt-28 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[#0a0000]"/>
         <Image
-          src={heroImage || '/images/homeparlour.png'}
+          src={heroImage || '/images/homeparloue.jpeg'}
           alt="Home Parlour Services – Hola Beauty at Your Doorstep Nellore"
           fill
           className="object-cover opacity-30"
@@ -57,7 +57,7 @@ export default async function HomeParlourPage() {
             <span>›</span>
             <span className="text-[#c9a84c]">Home Parlour</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-black mb-3 gold-shimmer" style={{fontFamily:'Playfair Display, serif'}}>
+          <h1 className="hero-h1 font-black mb-3 gold-shimmer" style={{fontFamily:'Playfair Display, serif'}}>
             Home Parlour Services
           </h1>
           <p className="text-white/40 italic" style={{fontFamily:'Great Vibes, cursive', fontSize:'28px'}}>Luxury at Your Doorstep</p>
