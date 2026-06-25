@@ -98,8 +98,7 @@ export default function HomeContent() {
               }}
               style={{width:'100%', height:'100%', objectFit:'cover', display:'block'}}
             >
-              <source src="/images/laptopopentitles.mp4" media="(min-width: 768px)" />
-              <source src="/images/opentitles.mp4" />
+              <source src="/images/laptopopentitles.mp4" />
             </video>
           </div>
         </div>
