@@ -4,6 +4,19 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── INTRO VIDEO ── */
+.intro-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 767px) {
+  .intro-video {
+    width: 100vw;
+    height: 80vh;
+  }
+}
+
 html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100vw; }
 
 body {

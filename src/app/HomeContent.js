@@ -85,26 +85,25 @@ export default function HomeContent() {
           top: slideUp ? '-100%' : '0',
           transition:'top 0.8s cubic-bezier(0.77,0,0.18,1)',
         }}>
-          <video
-            ref={videoRef}
-            muted
-            playsInline
-            disablePictureInPicture
-            onClick={() => {
-              setSlideUp(true)
-              setTimeout(() => setHidden(true), 800)
-            }}
-            style={{
-              position:'absolute',
-              top:'50%', left:'50%',
-              minWidth:'100%', minHeight:'100%',
-              width:'auto', height:'auto',
-              transform:'translate(-50%,-50%)',
-            }}
-          >
-            <source src="/images/laptopopentitles.mp4" media="(min-width: 768px)" />
-            <source src="/images/opentitles.mp4" />
-          </video>
+          <div className="intro-video-wrap" style={{
+            position:'absolute', inset:0,
+            display:'flex', alignItems:'center', justifyContent:'center',
+          }}>
+            <video
+              ref={videoRef}
+              muted
+              playsInline
+              disablePictureInPicture
+              className="intro-video"
+              onClick={() => {
+                setSlideUp(true)
+                setTimeout(() => setHidden(true), 800)
+              }}
+            >
+              <source src="/images/laptopopentitles.mp4" media="(min-width: 768px)" />
+              <source src="/images/opentitles.mp4" />
+            </video>
+          </div>
         </div>
       </div>
       )}
