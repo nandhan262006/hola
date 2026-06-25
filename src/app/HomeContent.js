@@ -83,8 +83,8 @@ export default function HomeContent() {
         <div style={{
           position:'absolute', inset:0, overflow:'hidden',
           display:'flex', alignItems:'center', justifyContent:'center',
-          top: slideUp ? '-100%' : '0',
-          transition:'top 0.8s cubic-bezier(0.77,0,0.18,1)',
+          transform: slideUp ? 'translateY(-100%)' : 'translateY(0)',
+          transition:'transform 0.8s cubic-bezier(0.77,0,0.18,1)',
         }}>
           <div className="intro-video-box">
             <video
