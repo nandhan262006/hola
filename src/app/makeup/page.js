@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import Footer from '@/components/Footer'
-import { SectionTitle, BookingCTA, boostPrice } from '@/components/SharedPage'
+import PricingCard from './PricingCard'
+import { SectionTitle, BookingCTA } from '@/components/SharedPage'
 
 export const metadata = {
   title: 'Makeup Services – Bridal, HD, Airbrush & Party Makeup',
@@ -130,88 +131,4 @@ export default async function MakeupPage() {
   )
 }
 
-function PricingCard({ name, tiers, gradient, popular }) {
-  return (
-    <div style={{
-      position:'relative',
-      borderRadius:'2px',
-      overflow:'hidden',
-      border: popular ? '1.5px solid #c9a84c' : '1px solid #c9a84c25',
-    }}>
-      {popular && (
-        <div style={{
-          position:'absolute', top:0, left:0, right:0, zIndex:10,
-          background:'#c9a84c', color:'#0a0000',
-          textAlign:'center', padding:'4px 0',
-          fontSize:'9px', letterSpacing:'0.25em', fontWeight:700,
-          textTransform:'uppercase',
-        }}>
-          MOST POPULAR
-        </div>
-      )}
-      <div style={{
-        background: gradient,
-        padding: popular ? '28px 20px 20px' : '24px 20px 20px',
-        textAlign:'center',
-      }}>
-        <h3 style={{
-          fontFamily:'Playfair Display, serif',
-          fontSize:'16px', fontWeight:700,
-          color:'#c9a84c',
-          textTransform:'uppercase',
-          letterSpacing:'0.08em',
-        }}>{name}</h3>
-        <div style={{
-          width:'30px', height:'1px',
-          background:'#c9a84c60',
-          margin:'10px auto 0',
-        }} />
-      </div>
-      <div style={{
-        background:'linear-gradient(175deg, #1c0a08, #0f0404)',
-      }}>
-        {tiers.map((tier, i) => (
-          <div
-            key={tier.label}
-            style={{
-              display:'flex', justifyContent:'space-between',
-              alignItems:'center',
-              padding:'12px 20px',
-              borderBottom: i < tiers.length - 1 ? '1px solid #c9a84c10' : 'none',
-            }}
-          >
-            <span style={{
-              fontFamily:'Cormorant Garamond, serif',
-              fontSize:'14px', color:'rgba(255,255,255,0.6)',
-              letterSpacing:'0.1em',
-            }}>{tier.label}</span>
-            <span style={{
-              fontFamily:'Playfair Display, serif',
-              fontSize:'15px', fontWeight:600,
-              color:'#f0d070',
-            }}>
-              <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.3)', fontWeight:400, marginRight:'6px', fontSize:'13px'}}>{boostPrice(tier.price)}</span>
-              {tier.price}
-            </span>
-          </div>
-        ))}
-      </div>
-      <a
-        href={`https://wa.me/919490939727?text=${encodeURIComponent('Hi! I would like to book an appointment for ' + name + ' at Hola Beauty Parlour.')}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          display:'block', textAlign:'center',
-          background:'#25d366', color:'#fff',
-          padding:'10px 0', borderRadius:'2px',
-          fontSize:'11px', fontWeight:700, letterSpacing:'0.1em',
-          textTransform:'uppercase', textDecoration:'none',
-          margin:'12px 16px 16px',
-          transition:'all 0.3s',
-        }}
-      >
-        Book Now
-      </a>
-    </div>
-  )
-}
+
