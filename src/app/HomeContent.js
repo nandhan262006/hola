@@ -499,7 +499,7 @@ export default function HomeContent() {
                 img:'/images/hd.png',
                 mrp:'₹15,000',
                 price:'₹9,999',
-                objectPos:'center 65%',
+                objectPos:'center 25%',
               },
               {
                 title:'Premium Perfection',
