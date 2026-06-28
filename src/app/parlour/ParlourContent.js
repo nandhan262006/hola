@@ -13,7 +13,7 @@ const categories = [
     services:[
       {name:'Eye Brows',price:'₹50'},{name:'Fore Head',price:'₹30'},
       {name:'Upper Lip',price:'₹30'},{name:'Chin',price:'₹30'},
-      {name:'Full Face',price:'₹200'},
+      {name:'Full Face',price:'₹300'},
     ],
   },
   {
@@ -31,15 +31,15 @@ const categories = [
     services:[
       {name:'Face',price:'₹300'},{name:'Face & Neck',price:'₹500'},
       {name:'Blouse Line',price:'₹500'},{name:'Full Arms',price:'₹500'},
-      {name:'Half Legs',price:'₹500'},{name:'Full Body',price:'₹500'},
+      {name:'Half Legs',price:'₹500'},{name:'Full Body',price:'₹2,500'},
     ],
   },
   {
     id:'waxing', title:'Flavored Waxing',
     gradient:'linear-gradient(160deg, #1a1510, #0d0a08)',
     services:[
-      {name:'Upper Lip',price:'₹30'},{name:'Chin',price:'₹30'},
-      {name:'Full Face',price:'₹200'},{name:'Under Arms',price:'₹150'},
+      {name:'Upper Lip',price:'₹50'},{name:'Chin',price:'₹50'},
+      {name:'Full Face',price:'₹400'},{name:'Under Arms',price:'₹20'},
       {name:'Half Arms',price:'₹400'},{name:'Full Arms',price:'₹800'},
       {name:'Half Legs',price:'₹500'},{name:'Full Legs',price:'₹1,000'},
       {name:'Full Body',price:'₹3,000'},
