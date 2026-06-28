@@ -600,7 +600,7 @@ export default function HomeContent() {
           </div>
 
           <div style={{
-            display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'12px',
+            display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:'12px',
           }}>
             {portfolioImages.map((src,i)=>(
               <div key={i} onClick={() => setLightboxIndex(i)} style={{
