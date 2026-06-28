@@ -24,7 +24,7 @@ export default function Navbar() {
               transition:'color .25s'
             }}>{label}</Link>
           ))}
-          <Link href="/booking" style={{
+          <a href="https://wa.me/919490939727?text=Hi!%20I%20would%20like%20to%20book%20an%20appointment%20at%20Hola%20Beauty%20Parlour." target="_blank" rel="noopener noreferrer" style={{
             background:'transparent',border:'1.5px solid #c41e3a',
             color:'#fff',fontFamily:'Cormorant Garamond,serif',fontSize:'14px',
             fontWeight:700,letterSpacing:'0.1em',padding:'8px 22px',
@@ -32,7 +32,7 @@ export default function Navbar() {
           }}
           onMouseEnter={e=>e.currentTarget.style.background='#c41e3a30'}
           onMouseLeave={e=>e.currentTarget.style.background='transparent'}
-          >Book Now</Link>
+          >Book Now</a>
         </div>
 
         {/* Mobile */}
@@ -48,7 +48,7 @@ export default function Navbar() {
 
       {open && (
         <div style={{background:'rgba(8,2,2,0.97)',padding:'16px 24px 24px',borderTop:'1px solid #c9a84c20'}}>
-          {[['Home','/'],['About','/#about'],['Makeup','/makeup'],['Parlour','/parlour'],['Home Parlour','/home-parlour'],['Gallery','/gallery'],['Contact','/contact'],['Book Now','/booking']].map(([l,h])=>(
+          {[['Home','/'],['About','/#about'],['Makeup','/makeup'],['Parlour','/parlour'],['Home Parlour','/home-parlour'],['Gallery','/gallery'],['Contact','/contact'],['Book Now','https://wa.me/919490939727?text=Hi!%20I%20would%20like%20to%20book%20an%20appointment%20at%20Hola%20Beauty%20Parlour.']].map(([l,h])=>(
             <Link key={h} href={h} onClick={()=>setOpen(false)}
               style={{display:'block',padding:'10px 0',color:'rgba(255,255,255,0.75)',
                 fontFamily:'Cormorant Garamond,serif',fontSize:'16px',

@@ -22,7 +22,7 @@ export default function Footer() {
                 {label:'Makeup Services', href:'/makeup'},
                 {label:'Parlour Services', href:'/parlour'},
                 {label:'Home Parlour Services', href:'/home-parlour'},
-                {label:'Book Appointment', href:'/booking'},
+                {label:'Book Appointment', href:'https://wa.me/919490939727?text=Hi!%20I%20would%20like%20to%20book%20an%20appointment%20at%20Hola%20Beauty%20Parlour.'},
                 {label:'Contact Us', href:'/contact'},
               ].map(l => (
                 <Link key={l.href} href={l.href} className="text-white/50 hover:text-gold-400 transition-colors text-sm">

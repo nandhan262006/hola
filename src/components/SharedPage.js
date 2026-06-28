@@ -103,9 +103,9 @@ export function BookingCTA() {
             </svg>
             Book via WhatsApp
           </a>
-          <Link href="/booking" className="btn-outline rounded-sm px-6 py-3 text-sm font-bold tracking-widest uppercase">
+          <a href={`https://wa.me/919490939727?text=${msg}`} target="_blank" rel="noopener noreferrer" className="btn-outline rounded-sm px-6 py-3 text-sm font-bold tracking-widest uppercase">
             Book Appointment
-          </Link>
+          </a>
         </div>
       </div>
     </section>
