@@ -31,6 +31,11 @@ export default function HomeContent() {
     '/images/portfolio4.png',
     '/images/portfolio5.png',
     '/images/portfolio6.png',
+    '/images/hairdressing.jpeg',
+    '/images/hairdressing1.jpeg',
+    '/images/hairdressing2.jpeg',
+    '/images/hairdressing3.jpeg',
+    '/images/hairdressing4.jpeg',
   ]
 
   useEffect(() => {
