@@ -499,6 +499,7 @@ export default function HomeContent() {
                 img:'/images/hd.png',
                 mrp:'₹15,000',
                 price:'₹9,999',
+                objectPos:'center 65%',
               },
               {
                 title:'Premium Perfection',
@@ -518,7 +519,7 @@ export default function HomeContent() {
                     src={pkg.img}
                     alt={pkg.title + ' – Hola Beauty Bridal Package'}
                     fill
-                    style={{objectFit:'cover', objectPosition:'center'}}
+                    style={{objectFit:'cover', objectPosition: pkg.objectPos || 'center'}}
                   />
                   <div style={{
                     position:'absolute',inset:0,
