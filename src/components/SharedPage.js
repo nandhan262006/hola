@@ -52,6 +52,7 @@ export function SectionTitle({ sub, title }) {
 }
 
 export function ServiceItem({ name, desc, price, popular, bg, hidePhoto }) {
+  const msg = encodeURIComponent(`Hi! I would like to book an appointment for ${name} at Hola Beauty Parlour.`)
   return (
     <div className="service-card rounded-lg overflow-hidden relative flex flex-col border" style={{borderColor:'#c9a84c30'}}>
       {popular && (
@@ -77,6 +78,23 @@ export function ServiceItem({ name, desc, price, popular, bg, hidePhoto }) {
           <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.3)', fontWeight:400, marginRight:'6px'}}>{boostPrice(price)}</span>
           {price}
         </div>
+        <a
+          href={`https://wa.me/919490939727?text=${msg}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display:'block', textAlign:'center', marginTop:'12px',
+            background:'#25d366', color:'#fff',
+            padding:'8px 0', borderRadius:'2px',
+            fontSize:'11px', fontWeight:700, letterSpacing:'0.1em',
+            textTransform:'uppercase', textDecoration:'none',
+            transition:'all 0.3s',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = '#1da851' }}
+          onMouseLeave={e => { e.currentTarget.style.background = '#25d366' }}
+        >
+          Book Now
+        </a>
       </div>
     </div>
   )

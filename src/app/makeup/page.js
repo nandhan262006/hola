@@ -196,6 +196,22 @@ function PricingCard({ name, tiers, gradient, popular }) {
           </div>
         ))}
       </div>
+      <a
+        href={`https://wa.me/919490939727?text=${encodeURIComponent('Hi! I would like to book an appointment for ' + name + ' at Hola Beauty Parlour.')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display:'block', textAlign:'center',
+          background:'#25d366', color:'#fff',
+          padding:'10px 0', borderRadius:'2px',
+          fontSize:'11px', fontWeight:700, letterSpacing:'0.1em',
+          textTransform:'uppercase', textDecoration:'none',
+          margin:'12px 16px 16px',
+          transition:'all 0.3s',
+        }}
+      >
+        Book Now
+      </a>
     </div>
   )
 }

@@ -306,14 +306,27 @@ function CategoryModal({ category, onClose }) {
                   fontSize:'15px', color:'rgba(255,255,255,0.75)',
                 }}>{svc.name}</span>
               </div>
-              <span style={{
-                fontFamily:'Playfair Display, serif',
-                fontSize:'15px', fontWeight:600,
-                color:'#f0d070', whiteSpace:'nowrap', marginLeft:'12px',
-              }}>
-              <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.3)', fontWeight:400, marginRight:'6px', fontSize:'13px'}}>{boostPrice(svc.price)}</span>
-              {svc.price}
+              <span style={{fontFamily:'Playfair Display, serif', fontSize:'15px', fontWeight:600, color:'#f0d070', whiteSpace:'nowrap', marginLeft:'12px'}}>
+                <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.3)', fontWeight:400, marginRight:'6px', fontSize:'13px'}}>{boostPrice(svc.price)}</span>
+                {svc.price}
               </span>
+              <a
+                href={`https://wa.me/919490939727?text=${encodeURIComponent('Hi! I would like to book an appointment for ' + svc.name + ' at Hola Beauty Parlour.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background:'#25d366', color:'#fff',
+                  padding:'4px 10px', borderRadius:'2px',
+                  fontSize:'9px', fontWeight:700, letterSpacing:'0.08em',
+                  textTransform:'uppercase', textDecoration:'none',
+                  whiteSpace:'nowrap', marginLeft:'8px',
+                  transition:'all 0.3s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#1da851' }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#25d366' }}
+              >
+                Book Now
+              </a>
             </div>
           ))}
         </div>

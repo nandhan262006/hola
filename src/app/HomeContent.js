@@ -569,6 +569,23 @@ export default function HomeContent() {
                   }}>
                     — {pkg.sub}
                   </p>
+                  <a
+                    href={`https://wa.me/919490939727?text=${encodeURIComponent('Hi! I would like to book an appointment for ' + pkg.sub + ' at Hola Beauty Parlour.')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display:'inline-block', marginTop:'16px',
+                      background:'#25d366', color:'#fff',
+                      padding:'8px 24px', borderRadius:'2px',
+                      fontSize:'11px', fontWeight:700, letterSpacing:'0.1em',
+                      textTransform:'uppercase', textDecoration:'none',
+                      transition:'all 0.3s',
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.background = '#1da851' }}
+                    onMouseLeave={e => { e.currentTarget.style.background = '#25d366' }}
+                  >
+                    Book Now
+                  </a>
                 </div>
               </div>
             ))}
