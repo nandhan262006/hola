@@ -36,7 +36,8 @@ export const metadata = {
     googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
   icons: {
-    icon: '/favicon.svg',
+    icon: '/images/logobg.png',
+    apple: '/images/logobg.png',
   },
   verification: {
     google: 'YOUR_GOOGLE_VERIFICATION_CODE',
