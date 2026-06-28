@@ -685,7 +685,7 @@ export default function HomeContent() {
             WebkitMaskImage:'linear-gradient(to right,transparent,black 5%,black 95%,transparent)',
           }}>
             <div className="reviews-track" style={{
-              display:'flex', gap:'20px', animation:'scrollReviews 60s linear infinite',
+              display:'flex', gap:'20px', animation:'scrollReviews 30s linear infinite',
             }}>
               {[
                 { name:'Shahi Shaik', text:'Absolutely loved my engagement makeup by Lasya mam! She made me look and feel amazing. The look was flawless, elegant, and lasted all day. So professional, kind, and talented. Highly recommend her for any special occasion!', stars:5 },
