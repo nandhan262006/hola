@@ -9,8 +9,9 @@ export default function Navbar() {
       <div style={{maxWidth:'980px',margin:'0 auto',padding:'0 24px',display:'flex',alignItems:'center',justifyContent:'space-between',height:'72px'}}>
 
         {/* ── LOGO ── */}
-        <Link href="/" style={{display:'flex',alignItems:'center',gap:'6px',textDecoration:'none'}}>
+        <Link href="/" style={{display:'flex',alignItems:'center',gap:'8px',textDecoration:'none'}}>
           <img src="/images/logobg.png" alt="Hola Beauty Parlour – Logo" style={{height:'50px', width:'auto'}} />
+          <span style={{fontFamily:'Great Vibes, cursive', fontSize:'32px', color:'#c9a84c', lineHeight:1, marginTop:'4px'}}>Hola</span>
         </Link>
 
         {/* ── DESKTOP LINKS ── */}
