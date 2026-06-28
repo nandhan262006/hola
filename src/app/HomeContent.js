@@ -485,7 +485,8 @@ export default function HomeContent() {
                 desc:'Embrace a simple, natural radiance with lightweight coverage. Perfect for brides who love a subtle, fresh, and effortlessly beautiful look.',
                
                 img:'/images/bride-hero.png',
-                price:'₹15,000',
+                mrp:'₹7,500',
+                price:'₹4,999',
               },
               {
                 title:'Picture-Perfect Glow',
@@ -493,15 +494,17 @@ export default function HomeContent() {
                 desc:'Achieve a smooth, high-definition finish that looks flawless both in person and in photographs, giving you a polished and radiant appearance throughout your celebration.',
                 
                 img:'/images/bride-hero.png',
-                price:'₹25,000',
+                mrp:'₹15,000',
+                price:'₹9,999',
               },
               {
-                title:'Airbrush Perfection',
-                sub:'Airbrush Makeup',
-                desc:'Experience advanced airbrush technology that delivers an ultra-lightweight, even, and radiant finish. Perfect for achieving a naturally flawless look that lasts throughout your special day.',
+                title:'Premium Perfection',
+                sub:'Premium Makeup',
+                desc:'Experience advanced premium makeup techniques that deliver an ultra-lightweight, even, and radiant finish. Perfect for achieving a naturally flawless look that lasts throughout your special day.',
                 
                 img:'/images/bride-hero.png',
-                price:'₹35,000',
+                mrp:'₹22,000',
+                price:'₹14,999',
               },
             ].map((pkg,i)=>(
               <div key={i} className="svc-card" style={{textAlign:'center'}}>
@@ -543,7 +546,8 @@ export default function HomeContent() {
                     fontFamily:'Cormorant Garamond,serif',
                     fontSize:'16px', lineHeight:1.65,
                   }}>
-                    Starting at {pkg.price}
+                    <span style={{textDecoration:'line-through', color:'rgba(255,255,255,0.35)', marginRight:'8px'}}>{pkg.mrp}</span>
+                    {pkg.price}
                   </p>
                   <p style={{
                     color:'rgba(255,255,255,0.55)',
