@@ -487,27 +487,24 @@ export default function HomeContent() {
               {
                 title:'Timeless Elegance',
                 sub:'Basic Makeup',
-                desc:'Embrace a simple, natural radiance with lightweight coverage. Perfect for brides who love a subtle, fresh, and effortlessly beautiful look.',
                
-                img:'/images/bride-hero.png',
+                img:'/images/basic.jpg',
                 mrp:'₹7,500',
                 price:'₹4,999',
               },
               {
                 title:'Picture-Perfect Glow',
                 sub:'HD Makeup',
-                desc:'Achieve a smooth, high-definition finish that looks flawless both in person and in photographs, giving you a polished and radiant appearance throughout your celebration.',
                 
-                img:'/images/bride-hero.png',
+                img:'/images/hd.png',
                 mrp:'₹15,000',
                 price:'₹9,999',
               },
               {
                 title:'Premium Perfection',
                 sub:'Premium Makeup',
-                desc:'Experience advanced premium makeup techniques that deliver an ultra-lightweight, even, and radiant finish. Perfect for achieving a naturally flawless look that lasts throughout your special day.',
                 
-                img:'/images/bride-hero.png',
+                img:'/images/premeium.jpg',
                 mrp:'₹22,000',
                 price:'₹14,999',
               },
