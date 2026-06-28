@@ -90,8 +90,6 @@ export function ServiceItem({ name, desc, price, popular, bg, hidePhoto }) {
             textTransform:'uppercase', textDecoration:'none',
             transition:'all 0.3s',
           }}
-          onMouseEnter={e => { e.currentTarget.style.background = '#1da851' }}
-          onMouseLeave={e => { e.currentTarget.style.background = '#25d366' }}
         >
           Book Now
         </a>
