@@ -29,9 +29,9 @@ export default function GalleryContent() {
       <section style={{background:'#090202', padding:'32px 16px 48px', minHeight:'100vh'}} className="sm:py-12 sm:px-6">
         <div style={{
           display:'grid',
-          gridTemplateColumns:'repeat(3,1fr)',
-          gap:'16px',
-          maxWidth:'1100px', margin:'0 auto',
+          gridTemplateColumns:'repeat(4,1fr)',
+          gap:'12px',
+          maxWidth:'980px', margin:'0 auto',
         }} className="sm:gap-5">
           {galleryItems.map((item, i) => (
             <div
