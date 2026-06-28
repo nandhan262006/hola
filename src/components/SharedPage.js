@@ -51,7 +51,7 @@ export function SectionTitle({ sub, title }) {
   )
 }
 
-export function ServiceItem({ name, desc, price, popular, bg }) {
+export function ServiceItem({ name, desc, price, popular, bg, hidePhoto }) {
   return (
     <div className="service-card rounded-lg overflow-hidden relative flex flex-col border" style={{borderColor:'#c9a84c30'}}>
       {popular && (
@@ -60,7 +60,7 @@ export function ServiceItem({ name, desc, price, popular, bg }) {
           Popular
         </div>
       )}
-      <div style={{height:'140px', background: bg || 'linear-gradient(160deg, #1a0a15, #0d050a)', position:'relative', overflow:'hidden'}}>
+      {!hidePhoto && <div style={{height:'140px', background: bg || 'linear-gradient(160deg, #1a0a15, #0d050a)', position:'relative', overflow:'hidden'}}>
         <div style={{
           position:'absolute', inset:0,
           background:'radial-gradient(ellipse at 50% 0%, #c41e3a20 0%, transparent 60%)',
@@ -69,7 +69,7 @@ export function ServiceItem({ name, desc, price, popular, bg }) {
           position:'absolute', bottom:0, left:0, right:0, height:'60px',
           background:'linear-gradient(to top, #0f0404, transparent)',
         }}/>
-      </div>
+      </div>}
       <div style={{background:'linear-gradient(175deg, #1c0a08, #0f0404)', padding:'12px 16px 16px', flex:1, display:'flex', flexDirection:'column'}}>
         <h3 className="font-bold mb-1" style={{fontFamily:'Playfair Display, serif', color:'#c9a84c', fontSize:'clamp(13px,2vw,16px)'}}>{name}</h3>
         <p className="text-white/40 leading-relaxed mb-2 flex-1" style={{fontFamily:'Cormorant Garamond, serif', fontSize:'clamp(12px,2vw,13px)'}}>{desc}</p>

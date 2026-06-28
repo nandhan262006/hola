@@ -77,7 +77,7 @@ export default async function HomeParlourPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{gap:'20px', marginTop:'40px'}}>
             {homeServices.map((svc, i) => (
               <Reveal key={svc.name} delay={i * 80}>
-                <ServiceItem {...svc} />
+                <ServiceItem {...svc} hidePhoto />
               </Reveal>
             ))}
           </div>
