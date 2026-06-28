@@ -150,7 +150,7 @@ export default function DiscountPopup() {
               transition:'all 0.3s',
             }}
           >
-            {sending ? 'Sending...' : 'Book an Appointment'}
+            {sending ? 'Sending...' : 'Click Now and Get 20% Off'}
           </button>
 
           {status === 'success' && (
