@@ -651,6 +651,123 @@ export default function HomeContent() {
       </section>
 
       {/* ════════════════════════════════════
+          GOOGLE REVIEWS CAROUSEL
+      ════════════════════════════════════ */}
+      <section style={{
+        background:'#090202', padding:'60px 24px', overflow:'hidden',
+      }}>
+        <div style={{maxWidth:'1100px',margin:'0 auto'}}>
+          <p style={{
+            fontFamily:'Cormorant Garamond,serif', fontSize:'11px',
+            letterSpacing:'0.45em', color:'#8b1a1a', textTransform:'uppercase',
+            textAlign:'center', marginBottom:'8px',
+          }}>Testimonials</p>
+          <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'12px',marginBottom:'8px'}}>
+            <svg width="20" height="20" viewBox="0 0 48 48" fill="none">
+              <path d="M24 4L28.5 16.5L42 18L32 28L34.5 42L24 34.5L13.5 42L16 28L6 18L19.5 16.5L24 4Z" fill="#c9a84c"/>
+            </svg>
+            <h2 style={{
+              fontFamily:'Playfair Display,serif', fontSize:'clamp(28px,5vw,40px)',
+              fontWeight:900, textAlign:'center', color:'#fff',
+            }}>GOOGLE REVIEWS</h2>
+            <svg width="20" height="20" viewBox="0 0 48 48" fill="none">
+              <path d="M24 4L28.5 16.5L42 18L32 28L34.5 42L24 34.5L13.5 42L16 28L6 18L19.5 16.5L24 4Z" fill="#c9a84c"/>
+            </svg>
+          </div>
+          <p style={{
+            fontFamily:'Cormorant Garamond,serif', fontSize:'14px',
+            textAlign:'center', color:'rgba(255,255,255,0.5)', marginBottom:'32px',
+            fontStyle:'italic',
+          }}>Rated 4.9 ⭐ based on 357+ reviews on Justdial</p>
+          <div className="reviews-track-wrap" style={{
+            overflow:'hidden',
+            maskImage:'linear-gradient(to right,transparent,black 5%,black 95%,transparent)',
+            WebkitMaskImage:'linear-gradient(to right,transparent,black 5%,black 95%,transparent)',
+          }}>
+            <div className="reviews-track" style={{
+              display:'flex', gap:'20px', animation:'scrollReviews 60s linear infinite',
+            }}>
+              {[
+                { name:'Shahi Shaik', text:'Absolutely loved my engagement makeup by Lasya mam! She made me look and feel amazing. The look was flawless, elegant, and lasted all day. So professional, kind, and talented. Highly recommend her for any special occasion!', stars:5 },
+                { name:'VeeeKay', text:'Makeup, hair and saree draping… overall service was too good. I have got a ton of compliments! All Thanks to Laasya for her efforts, patience and Punctuality.', stars:5 },
+                { name:'S Reddy', text:'The best makeup artist in Nellore! Each and every detail was perfect. Just loved the look—it was clean, beautiful, and flawless. The staff and the place were so well-maintained.', stars:5 },
+                { name:'Silpa reddy', text:'It was really a appreciable service, worth your money!', stars:5 },
+                { name:'Guru Prasad Vasundhara', text:'I took facial, waxing, pedicure services from lasya and I must say, it\'s the best home parlour service I\'ve experienced! Everything was done perfectly and professionally. Very reasonable prices.', stars:5 },
+                { name:'Rekha CH', text:'She was too dedicated and passionated in her work... done threading and pedicure too good at home service. Best parlour for home service.', stars:5 },
+                { name:'Mahalakshmi Munagala', text:'I really appreciate Mrs Lasya patience and her friendliness. Good atmosphere and friendly nature. I am fully happy with your service.', stars:5 },
+                { name:'Vimala Kumari', text:'The parlour is clean and welcoming with friendly and attentive staff. Facial and waxing prices are reasonable. Highly recommend for a relaxing experience.', stars:5 },
+                { name:'Sireesha', text:'They did my hair cut exactly like my reference pic. We had a great conversation, lots of laughter and I\'m happy with this gorgeous hair cut! Thank you so much Hola Beauty Parlour.', stars:5 },
+                { name:'NMK REDDY', text:'Very punctual and does her best. Does her job perfectly. Saree and hair makeover were done very nicely. Recommended this salon!', stars:5 },
+                { name:'Puneetha D', text:'Laasya is a punctual and trusted person. She understood what we were asking for and did a wonderful job. I strongly recommend Laasya for any ladies function makeup needs.', stars:5 },
+                { name:'Pilli Venkata lakshmi', text:'Amazing service by Lasya garu. I visited for a facial and detan pack. I am so satisfied with their service. Salon is hygienic and they are so friendly.', stars:5 },
+              ].map((r, i) => (
+                <div key={i} style={{
+                  flex:'0 0 320px', padding:'24px', borderRadius:'4px',
+                  background:'linear-gradient(175deg, #1c0a08, #0f0404)',
+                  border:'1px solid rgba(201,168,76,0.15)',
+                  display:'flex', flexDirection:'column', gap:'12px',
+                }}>
+                  <div style={{display:'flex', gap:'3px'}}>
+                    {[...Array(5)].map((_, s) => (
+                      <svg key={s} width="14" height="14" viewBox="0 0 48 48" fill={s < r.stars ? '#c9a84c' : 'rgba(255,255,255,0.15)'}>
+                        <path d="M24 4L28.5 16.5L42 18L32 28L34.5 42L24 34.5L13.5 42L16 28L6 18L19.5 16.5L24 4Z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <p style={{
+                    fontFamily:'Cormorant Garamond,serif', fontSize:'15px', lineHeight:1.6,
+                    color:'rgba(255,255,255,0.8)', flex:1,
+                  }}>"{r.text}"</p>
+                  <p style={{
+                    fontFamily:'Cormorant Garamond,serif', fontSize:'13px', fontWeight:700,
+                    color:'#c9a84c', letterSpacing:'0.05em',
+                  }}>— {r.name}</p>
+                </div>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {[
+                { name:'Shahi Shaik', text:'Absolutely loved my engagement makeup by Lasya mam! She made me look and feel amazing. The look was flawless, elegant, and lasted all day. So professional, kind, and talented. Highly recommend her for any special occasion!', stars:5 },
+                { name:'VeeeKay', text:'Makeup, hair and saree draping… overall service was too good. I have got a ton of compliments! All Thanks to Laasya for her efforts, patience and Punctuality.', stars:5 },
+                { name:'S Reddy', text:'The best makeup artist in Nellore! Each and every detail was perfect. Just loved the look—it was clean, beautiful, and flawless. The staff and the place were so well-maintained.', stars:5 },
+                { name:'Silpa reddy', text:'It was really a appreciable service, worth your money!', stars:5 },
+                { name:'Guru Prasad Vasundhara', text:'I took facial, waxing, pedicure services from lasya and I must say, it\'s the best home parlour service I\'ve experienced! Everything was done perfectly and professionally. Very reasonable prices.', stars:5 },
+                { name:'Rekha CH', text:'She was too dedicated and passionated in her work... done threading and pedicure too good at home service. Best parlour for home service.', stars:5 },
+                { name:'Mahalakshmi Munagala', text:'I really appreciate Mrs Lasya patience and her friendliness. Good atmosphere and friendly nature. I am fully happy with your service.', stars:5 },
+                { name:'Vimala Kumari', text:'The parlour is clean and welcoming with friendly and attentive staff. Facial and waxing prices are reasonable. Highly recommend for a relaxing experience.', stars:5 },
+                { name:'Sireesha', text:'They did my hair cut exactly like my reference pic. We had a great conversation, lots of laughter and I\'m happy with this gorgeous hair cut! Thank you so much Hola Beauty Parlour.', stars:5 },
+                { name:'NMK REDDY', text:'Very punctual and does her best. Does her job perfectly. Saree and hair makeover were done very nicely. Recommended this salon!', stars:5 },
+                { name:'Puneetha D', text:'Laasya is a punctual and trusted person. She understood what we were asking for and did a wonderful job. I strongly recommend Laasya for any ladies function makeup needs.', stars:5 },
+                { name:'Pilli Venkata lakshmi', text:'Amazing service by Lasya garu. I visited for a facial and detan pack. I am so satisfied with their service. Salon is hygienic and they are so friendly.', stars:5 },
+              ].map((r, i) => (
+                <div key={`dup-${i}`} style={{
+                  flex:'0 0 320px', padding:'24px', borderRadius:'4px',
+                  background:'linear-gradient(175deg, #1c0a08, #0f0404)',
+                  border:'1px solid rgba(201,168,76,0.15)',
+                  display:'flex', flexDirection:'column', gap:'12px',
+                }}>
+                  <div style={{display:'flex', gap:'3px'}}>
+                    {[...Array(5)].map((_, s) => (
+                      <svg key={s} width="14" height="14" viewBox="0 0 48 48" fill={s < r.stars ? '#c9a84c' : 'rgba(255,255,255,0.15)'}>
+                        <path d="M24 4L28.5 16.5L42 18L32 28L34.5 42L24 34.5L13.5 42L16 28L6 18L19.5 16.5L24 4Z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <p style={{
+                    fontFamily:'Cormorant Garamond,serif', fontSize:'15px', lineHeight:1.6,
+                    color:'rgba(255,255,255,0.8)', flex:1,
+                  }}>"{r.text}"</p>
+                  <p style={{
+                    fontFamily:'Cormorant Garamond,serif', fontSize:'13px', fontWeight:700,
+                    color:'#c9a84c', letterSpacing:'0.05em',
+                  }}>— {r.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════
           HAIRDRESSING CAROUSEL
       ════════════════════════════════════ */}
       <section style={{

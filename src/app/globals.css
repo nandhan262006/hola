@@ -59,6 +59,11 @@ body {
   100% { transform:translateX(calc(-220px * 6 - 16px * 5)); }
 }
 
+@keyframes scrollReviews {
+  0% { transform:translateX(0); }
+  100% { transform:translateX(-50%); }
+}
+
 /* ── SPARKLE PARTICLES ── */
 @keyframes twinkle {
   0%,100% { opacity:0; transform:scale(0.3) rotate(0deg); }
