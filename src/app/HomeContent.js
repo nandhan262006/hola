@@ -488,7 +488,7 @@ export default function HomeContent() {
                 title:'Timeless Elegance',
                 sub:'Basic Makeup',
                
-                img:'/images/basic.jpg',
+                img:'/images/basic.jpeg',
                 mrp:'₹7,500',
                 price:'₹4,999',
               },
@@ -496,7 +496,7 @@ export default function HomeContent() {
                 title:'Picture-Perfect Glow',
                 sub:'HD Makeup',
                 
-                img:'/images/hd.png',
+                img:'/images/hd.jpeg',
                 mrp:'₹15,000',
                 price:'₹9,999',
                 objectPos:'center 10%',
@@ -505,7 +505,7 @@ export default function HomeContent() {
                 title:'Premium Perfection',
                 sub:'Premium Makeup',
                 
-                img:'/images/premeium.jpg',
+                img:'/images/premeium.jpeg',
                 mrp:'₹22,000',
                 price:'₹14,999',
               },
