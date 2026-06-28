@@ -113,19 +113,6 @@ export default function BookingContent() {
                     ✕ Something went wrong. Please try again or contact us directly on WhatsApp.
                   </p>
                 )}
-
-                <div style={{
-                  background:'linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04))',
-                  border:'1px solid rgba(201,168,76,0.3)', borderRadius:'2px',
-                  padding:'14px 18px', textAlign:'center',
-                }}>
-                  <p style={{
-                    fontFamily:'Cormorant Garamond, serif',
-                    color:'#f0d070', fontSize:'15px', fontWeight:700, margin:0,
-                  }}>
-                    🎉 Click Now and Get <span style={{color:'#c9a84c', fontSize:'18px'}}>20% Off</span> on Your Total Bill!
-                  </p>
-                </div>
               </form>
             </div>
           </div>
