@@ -496,7 +496,7 @@ export default function HomeContent() {
                 title:'Picture-Perfect Glow',
                 sub:'HD Makeup',
                 
-                img:'/images/hd.jpeg',
+                img:'/images/HD.jpeg',
                 mrp:'₹15,000',
                 price:'₹9,999',
                 objectPos:'center 10%',
