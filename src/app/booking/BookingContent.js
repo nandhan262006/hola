@@ -98,7 +98,7 @@ export default function BookingContent() {
                         <rect x="2" y="4" width="20" height="16" rx="2"/>
                         <path d="M22 7l-10 7L2 7"/>
                       </svg>
-                      Click Now and Get 20% Off
+                      Book an Appointment
                     </>
                   )}
                 </button>
