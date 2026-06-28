@@ -311,7 +311,7 @@ function CategoryModal({ category, onClose }) {
                 {svc.price}
               </span>
               <a
-                href={`https://wa.me/919490939727?text=${encodeURIComponent('Hi! I would like to book an appointment for ' + svc.name + ' at Hola Beauty Parlour.')}`}
+                href={`https://wa.me/919490939727?text=${encodeURIComponent('Hi! I would like to book an appointment for ' + category.title + ' - ' + svc.name + ' at Hola Beauty Parlour.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
